@@ -60,6 +60,13 @@ ul li a:hover {
   background: none;
   outline: none;
 }
+.btn:hover {
+  transition:ease-in-out 0.5s;
+  background: #164863;
+}
+.btn button:hover{
+  color: #fff;
+}
 .active {
   font-weight: 800;
   color: #164863;
