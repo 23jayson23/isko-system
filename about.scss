@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  color: #252525;
+  background: rgb(255, 255, 255);
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  list-style-type: none;
+}
+li a {
+  letter-spacing: 2px;
+  color: #252525;
+  text-decoration: none;
+}
+ul:hover li a {
+  opacity: 0.2;
+}
+ul li a:hover {
+  font-weight: 800;
+  opacity: 1;
+  transition: ease-in-out 0.1s;
+}
+.line {
+  border-right: solid 1px #252525;
+}
+.btn {
+  width: 100px;
+  padding: 10px;
+  border: solid 1px #252525;
+  border-radius: 10px;
+}
+.btn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  outline: none;
+}
+.active {
+  font-weight: 800;
+  color: #164863;
+}
+@font-face {
+  font-family: "BIG JOHN";
+  src: url("assets/font/BIG JOHN.otf");
+}
+@font-face {
+  font-family: "SLIM JOE";
+  src: url("assets/font/Slim Joe.otf");
+}
+.about-section{
+    background-image: url("assets/image/buildingtestda.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-child{
+    background: rgba(255, 255, 255, 0.692);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    gap: 50px;
+}
+.about-container{
+    padding: 90px;
+    width: 100%;
+}
+.about-container strong{
+    font-family: 'BIG JOHN';
+    color: #164863;
+    font-size: 50px;
+}
+.about-container p{
+    font-size: 20px;
+}
+.about-image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 30px;
+   }
+   .footer-logo-container a{
+    text-decoration: none;
+    color: #252525;
+  
+   }
+   .footer-logo-container strong{
+    font-family: 'BIG JOHN';
+    color: #164863;
+    font-size: 25px;
+   }
+   .footer-logo-container{
+    padding: 50px;
+    width: 25%;
+    line-height: 30px;
+   }
+   .footer-logo-container a:hover{
+    text-decoration: none;
+    color: #fbaf03;
+    transition: ease-in-out 0.2s;
+   }
+   .social-icon{
+    margin-left: 10px;
+    display: flex;
+    gap: 5px;
+   }
