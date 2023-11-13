@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  color: #252525;
+  background: rgb(255, 255, 255);
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  list-style-type: none;
+}
+li a {
+  letter-spacing: 2px;
+  color: #252525;
+  text-decoration: none;
+}
+ul:hover li a {
+  opacity: 0.2;
+}
+ul li a:hover {
+  font-weight: 800;
+  opacity: 1;
+  transition: ease-in-out 0.1s;
+}
+.line {
+  border-right: solid 1px #252525;
+}
+.btn {
+  width: 100px;
+  padding: 10px;
+  border: solid 1px #252525;
+  border-radius: 10px;
+}
+.btn button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  outline: none;
+}
+.btn:hover {
+  transition: ease-in-out 0.5s;
+  background: #164863;
+}
+.btn button:hover {
+  color: #fff;
+}
+.active {
+  font-weight: 800;
+  color: #164863;
+}
+@font-face {
+  font-family: "BIG JOHN";
+  src: url("assets/font/BIG JOHN.otf");
+}
+@font-face {
+  font-family: "SLIM JOE";
+  src: url("assets/font/Slim Joe.otf");
+}
+.program-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("assets/image/bghead.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.prog-head {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 70%;
+  text-align: center;
+}
+.title strong {
+  font-family: "BIG JOHN";
+  font-size: 40px;
+  color: #164863;
+}
+.title p {
+  margin-top: 10px;
+  font-family: "SLIM JOE";
+  text-align: center;
+  letter-spacing: 3px;
+}
+.InputContainer {
+  margin-top: 20px;
+  height: 60px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  padding-left: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.308);
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  caret-color: rgb(255, 81, 0);
+}
+
+.labelforsearch {
+  cursor: text;
+  padding: 0px 12px;
+}
+
+.searchIcon {
+  width: 13px;
+}
+
+.border {
+  height: 40%;
+  width: 1.3px;
+  background-color: rgb(223, 223, 223);
+}
+
+.micIcon {
+  width: 12px;
+}
+
+.micButton {
+  padding: 0px 15px 0px 12px;
+  border: none;
+  background-color: transparent;
+  height: 100%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.searchIcon path {
+  fill: rgb(114, 114, 114);
+}
+
+.micIcon path {
+  fill: rgb(255, 81, 0);
+}
+
+.micButton:hover {
+  background-color: rgb(255, 230, 230);
+  transition-duration: 0.3s;
+}
+.main-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.category {
+  z-index: 100;
+  width: 100%;
+}
+.category .button {
+  border-radius: 5px;
+  background: rgba(22, 72, 99, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.category .button:hover {
+  background-color: #fbaf03;
+  transition: ease-in-out 0.5s;
+}
+.main-container-child .title {
+  font-family: "SLIM JOE";
+  font-size: 50px;
+  text-align: center;
+  color: #164863;
+}
+.program-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.card-carosel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.card {
+  transition: ease-in-out 0.5s;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+  -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+  box-shadow: 3px 3px 10px 3px #dddddd;
+  width: 350px;
+  height: 400px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.card-child {
+  width: 100%;
+  height: 100%;
+}
+.card-image {
+  border-radius: 10px 0px 10px 0px;
+  width: 100%;
+  height: 80%;
+}
+.card-image img {
+  border-radius: 10px 10px 0px 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-info {
+  text-align: center;
+}
+.circle-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+.circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+.card-hov {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(22, 72, 99, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  // transform: translateY(-100%);
+  width: 100%;
+  height: 100%;
+  transition: ease 0.5s;
+}
+.card-hov p {
+  color: #fff;
+  text-align: justify;
+  padding: 30px;
+}
+.card:hover .card-hov {
+  transform: translateY(-100%);
+}
+.information{
+  margin-top: 50px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.information p{
+  width: 70%;
+  line-height: 30px;
+}
+
+.program-seemore-btn{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.program-seemore-btn button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+ }
+ 
+ .program-seemore-btn button.learn-more {
+  width: 12rem;
+  height: auto;
+ }
+ 
+ .program-seemore-btn button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #164863;
+  border-radius: 1.625rem;
+ }
+ 
+ .program-seemore-btn button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+ }
+ 
+ .program-seemore-btn button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+ }
+ 
+ .program-seemore-btn button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+ }
+ 
+ .program-seemore-btn button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+ }
+ 
+ .program-seemore-btn button:hover .circle {
+  width: 100%;
+ }
+ 
+ .program-seemore-btn button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+ }
+ 
+ .program-seemore-btn button:hover .button-text {
+  color: #fff;
+ }
+ 
+ footer{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 30px;
+ }
+ .footer-logo-container a{
+  text-decoration: none;
+  color: #252525;
+
+ }
+ .footer-logo-container strong{
+  font-family: 'BIG JOHN';
+  color: #164863;
+  font-size: 25px;
+ }
+ .footer-logo-container{
+  padding: 50px;
+  width: 25%;
+  line-height: 30px;
+ }
+ .footer-logo-container a:hover{
+  text-decoration: none;
+  color: #fbaf03;
+  transition: ease-in-out 0.2s;
+ }
+ .social-icon{
+  margin-left: 10px;
+  display: flex;
+  gap: 5px;
+ }
