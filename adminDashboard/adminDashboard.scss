@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+  @font-face {
+    font-family: "BIG JOHN";
+    src: url("assets/font/BIG JOHN.otf");
+  }
+  @font-face {
+    font-family: "SLIM JOE";
+    src: url("assets/font/Slim Joe.otf");
+  }
+}
+body{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+    background: #efefef;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.main-section{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.side-panel{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px black;
+  width: 13%;
+  height: 100%;
+}
+.main{
+  border: solid 1px black;
+  width: 80%;
+  height: 100%;
+}
+.side-container{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap:5px;
+  border: solid 1px black;
+  width: 100%;
+}
+li{
+  position: relative;
+  border-radius: 10px;
+  padding: 8px 5px 8px 5px;
+  width: 80%;
+  border: solid 1px black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: ease-in-out 0.5;
+ list-style-type: none;
+}
+li a{
+  text-decoration: none;
+  color: black;
+}
+li:hover{
+  background-color: #fbaf03;
+
+}
+li:focus, svg:hover{
+  color: #fff;
+}
+li a::before{
+  color: #fff;
+}
+.icon-container svg{
+  width: 30px;
+  height: 30px;
+}
