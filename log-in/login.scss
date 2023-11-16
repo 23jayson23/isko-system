@@ -128,7 +128,6 @@ body {
  .password-container .input::placeholder {
   color: #0d0c22;
  }
- 
  .password-container .input:focus, input:hover {
   outline: none;
   border-color: #164863;
@@ -151,7 +150,6 @@ body {
     cursor: pointer;
     background: #164863;
     color: #fff;
-   font-weight: 800;
    letter-spacing: 3px;
    text-transform: uppercase;
 }
