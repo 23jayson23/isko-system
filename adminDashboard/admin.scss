@@ -26,7 +26,6 @@ body {
   display: flex;
   width: 100%;
   height: 100vh;
-  position: fixed;
 }
 .side-panel {
   z-index: 100;
@@ -166,7 +165,7 @@ ul li a {
   height: 50px;
   object-fit: cover;
 }
-.data-container{
+.data-container {
   width: 100%;
   height: 20%;
   padding: 30px 30px 0px 30px;
@@ -175,10 +174,10 @@ ul li a {
   align-items: center;
   gap: 30px;
 }
-.count-container{
+.count-container {
   border-radius: 10px;
   display: flex;
-  gap:30px;
+  gap: 30px;
   color: #164863;
   padding: 20px;
   width: 400px;
@@ -188,36 +187,36 @@ ul li a {
   -moz-box-shadow: 3px 3px 10px 3px #dddddd;
   box-shadow: 3px 3px 10px 3px #dddddd;
 }
-.count-container div:nth-child(1){
+.count-container div:nth-child(1) {
   display: flex;
   width: 20%;
   height: 100%;
   justify-content: center;
   align-items: center;
 }
-.count-container div:nth-child(2){
+.count-container div:nth-child(2) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 20px;
   border-left: solid 2px #fbaf03;
 }
-.count-container img{
+.count-container img {
   width: 80px;
   height: 80px;
 }
-.count-container strong{
+.count-container strong {
   font-size: 40px;
   font-weight: 800;
   color: #164863;
 }
-.count-container p{
-  font-family: 'SLIM JOE';
+.count-container p {
+  font-family: "SLIM JOE";
   font-weight: 800;
-  letter-spacing: 2PX;
+  letter-spacing: 2px;
   margin-top: 10px;
 }
-.data-graph-container{
+.data-graph-container {
   width: 100%;
   margin-top: -20px;
   padding: 20px;
@@ -225,10 +224,10 @@ ul li a {
   padding: 30px;
   gap: 20px;
 }
-.user-container{
+.user-container {
   width: 60%;
   background: #fff;
-  border-radius:10px;
+  border-radius: 10px;
   padding: 20px;
   overflow: auto;
   height: 100vh;
@@ -238,60 +237,60 @@ ul li a {
   box-shadow: 3px 3px 10px 3px #dddddd;
 }
 
-.graph-container{
+.graph-container {
   width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.user-report{
+.user-report {
   width: 100%;
 }
-table{
+table {
   width: 100%;
   border-radius: 10px;
   border-collapse: collapse;
 }
-table thead{
+table thead {
   background: #164863;
   color: #fff;
-  width:100%;
-}
-thead tr{
   width: 100%;
 }
-thead tr td{
+thead tr {
+  width: 100%;
+}
+thead tr td {
   padding: 10px;
   font-weight: 500;
   text-align: center;
   max-width: 200px;
 }
-tbody tr{
+tbody tr {
   cursor: pointer;
 }
-tbody tr td{
+tbody tr td {
   border-bottom: solid 0.5px rgba(0, 0, 0, 0.31);
   padding: 10px;
   text-align: center;
   max-width: 200px;
 }
-tbody tr:hover{
+tbody tr:hover {
   background: #efefef;
   transition: ease-in-out 0.5s;
 }
-tbody tr td svg{
+tbody tr td svg {
   width: 20px;
   height: 20px;
 }
-.graph-one{
+.graph-one {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 90%;
 }
-.graph-two{
+.graph-two {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -308,24 +307,180 @@ tbody tr td svg{
   margin: 0 auto;
 }
 
-#my-chart tbody{
+#my-chart tbody {
   width: 100%;
   margin: 0 auto;
 }
-#my-chart .column th{
+#my-chart .column th {
   text-align: center;
   max-width: 200px;
 }
-#my-chart .column{
+#my-chart .column {
   --color-1: rgba(255, 170, 170, 0.2);
   --color-2: rgba(255, 170, 170, 0.4);
   --color-3: rgba(255, 170, 170, 0.5);
   --color-4: rgba(255, 170, 170, 0.6);
-  --color-5: rgba(255, 170, 170, 1.0);
-  --color-6: rgba(255, 170, 170, 1.0);
+  --color-5: rgba(255, 170, 170, 1);
+  --color-6: rgba(255, 170, 170, 1);
   --color-7: rgba(255, 170, 170, 0.8);
   --color-8: rgba(255, 170, 170, 0.6);
   --color-9: rgba(255, 170, 170, 0.4);
   --color-10: rgba(255, 170, 170, 0.2);
   width: 100%;
+}
+.modal-main {
+  transition: ease-in-out 0.5s;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  position: absolute;
+}
+.modal-container {
+  background-color: #F8F9FF;
+  border-radius: 20px;
+  width: 30%;
+  padding: 20px;
+  transition: ease-in-out 0.5s;
+  height: 700px;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+.main-modal{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.modal-title{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+.modal-title button{
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.modal-title button svg{
+  width: 35px;
+  height: 35px;
+}
+.modal-image-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-image-container img{
+  border: solid 5px #fff;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  -webkit-box-shadow: 10.5px 7px 18px 8.5px #dddddd;
+  -moz-box-shadow: 10.5px 7px 18px 8.5px #dddddd;
+  box-shadow: 10.5px 7px 18px 8.5px #dddddd;
+}
+.modal-NS{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.modal-NS strong{
+ font-size: 20px;
+ font-weight: 800;
+}
+.modal-information{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #fff;
+  -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+  -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+  box-shadow: 3px 3px 10px 3px #dddddd;
+  padding-bottom: 20px;
+  
+}
+.main-modal hr{
+  width: 100%;
+  background: #dddddd;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  height: 2px;
+}
+.modal-information div:nth-child(1){
+  padding: 20px;
+  font-weight: 700;
+  color: #fbaf03;
+  font-size: 20px;
+}
+.modal-info{
+  display: flex;
+  width: 100%;
+}
+.modal-info span{
+  padding: 10px 20px;
+  width: 100%;
+}
+.modal-info span:nth-child(1){
+  width: 40%; overflow:hidden;
+  font-weight: 800;
+  color: #164863;
+}
+.modal-info span:nth-child(2){
+  overflow:hidden;
+  color: #164863;
+}
+.button-modal{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.button-modal button{
+  width: 95%;
+  cursor: pointer;
+  background: #164863;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+.button-modal button:hover{
+  transition: ease-in-out 0.5s;
+  background: #fbaf03;
+}
+.button-modal button svg{
+  width: 30px;
+  color: #fff;
+  height: 30px;
+  padding: 10px 20px;
+}
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
 }
