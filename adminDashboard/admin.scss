@@ -285,6 +285,7 @@ tbody tr td svg{
 .graph-one{
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 90%;
 }
@@ -301,7 +302,7 @@ tbody tr td svg{
   -moz-box-shadow: 3px 3px 10px 3px #dddddd;
   box-shadow: 3px 3px 10px 3px #dddddd;
   border-radius: 10px;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -325,25 +326,4 @@ tbody tr td svg{
   --color-9: rgba(255, 170, 170, 0.4);
   --color-10: rgba(255, 170, 170, 0.2);
   width: 100%;
-}
-#animations-example .column tbody {
-  overflow-y: hidden; /* remove this to see how it works */
-}
-#animations-example .column tbody th {
-  background-color: #fff;
-  z-index: 1;
-}
-#animations-example .column tbody td {
-  animation: moving-bars 2s linear infinite;
-}
-@keyframes moving-bars {
-  0%  { transform: translateY( 100% ); }
-  30% { transform: translateY( 0 ); }
-}
-#mychart td{
-  border-radius:20px;
-}
-#my-chart th{
-  width: 70px;
-  --color:#fff;
 }
