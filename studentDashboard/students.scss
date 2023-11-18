@@ -256,3 +256,65 @@ body {
   font-size: 13px;
   width: 100%;
 }
+.progress-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+.progress-child{
+  position: relative;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 97%;
+  height: 100%;
+  display: flex;
+}
+.progress-child .circle-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.circle{
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  border: solid 2px #164863;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle svg{
+  color: #164863;
+  width: 30px;
+  height: 30px;
+}
+.active-process{
+  border: none;
+  background: #016A70;
+}
+.active-process svg{
+ color: #fff;
+}
+.line{
+  top: 59px;
+  left: 200px;
+  z-index: 1;
+  position: absolute;
+  width: 75%;
+  height: 10px;
+  border-radius: 30px;
+  background-color: #fbaf03;
+}
+.line-progess{
+  position: absolute;
+  width: 10%;
+  height: 100%;
+  background-color: #016A70;
+}
