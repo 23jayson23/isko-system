@@ -328,6 +328,12 @@ color: #186F65;
   height: 20px;
   color: #164863;
 }
+.action button svg:hover{
+  width: 20px;
+  height: 20px;
+  color: #fbaf03;
+  transition: ease-in-out 0.5s;
+}
 .pagination{
   position: relative;
   width: 100%;
