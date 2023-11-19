@@ -323,6 +323,12 @@ ul li a {
   height: 20px;
   color: #164863;
 }
+.action button svg:hover{
+  width: 20px;
+  height: 20px;
+  color: #fbaf03;
+  transition: ease-in-out 0.5s;
+}
 
 .pagination{
   position: relative;
@@ -488,4 +494,54 @@ ul li a {
   color: #fff;
   height: 30px;
   padding: 10px 20px;
+}
+.modal-info-requiremtnts{
+  width: auto;
+  padding: 20px;
+}
+.modal-info-requiremtnts-image{
+  margin-top: 10px;
+  width: auto;
+  height: 100px;
+  overflow: hidden;
+  z-index: 1; /* Sit on top */
+  border-radius: 10px;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal-info-requiremtnts-image img{
+  width: 100%;
+  object-fit: cover;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+}
+.modal-info-requiremtnts-image img:hover{
+ transform: scale(1.2);
+}
+.modal-info-requiremtnts span{
+  font-weight: 800;
+  color: #164863;
+}
+#myImg:hover {opacity: 0.7;}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+.modal-image{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
