@@ -176,3 +176,37 @@ ul li a {
   align-items: center;
   gap: 30px;
 }
+.reports-button-container{
+  width: auto;
+  padding: 30px;
+  gap: 10px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.btn-report{
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  transition: ease 0.5s;
+}
+.btn-report:hover{
+  color: #ffffff;
+  background: #fbaf03;
+}
+.btn-report svg{
+  width: 40px;
+  height: 40px;
+}
+.btn-report span{
+  padding: 20px;
+  font-size: 15px;
+}
