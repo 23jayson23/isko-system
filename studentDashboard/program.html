@@ -174,7 +174,7 @@
             </div>
           </div>
         </div>
-        <div class="program">
+        <div class="program" data-aos="fade-up" data-aos-duration="3000">
           <div class="prog-container">
             <div class="prog-image">
               <img src="../assets/image/prog-imge.png">
@@ -260,4 +260,16 @@
       </div>
     </div>
   </body>
+  <script>
+  AOS.init();
+  function viewInfo(){
+    var modal_show = document.getElementById("personalinfo")
+    modal_show.style.display = "flex"
+  }
+  function closeModal(){
+    var modal_show = document.getElementById("personalinfo")
+    modal_show.style.display = "none"
+    console.log(modal_show)
+  }
+  </script>
 </html>
