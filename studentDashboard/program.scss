@@ -276,3 +276,49 @@ body {
   .modal-btn-container button:nth-child(2){
     background: #9ADE7B;
   }
+  .program{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100%;
+    padding: 30px;
+    overflow: auto;
+    gap: 20px 20px;
+  }
+  .prog-container{
+    width: auto;
+    height: 450px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 10px;
+  }
+  .prog-container .prog-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .prog-container img{
+    width: 100px;
+    height: 100px;
+  }
+  .prog-title{
+    padding: 20px;
+    width: auto;
+    text-align: center;
+  }
+  .prog-title strong{
+    margin-top: 10px;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+    color: #164863;
+  }
+  .prog-title p{
+    margin-top: 10px;
+    width: 100%;
+    font-size: 15px;
+  }
