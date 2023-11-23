@@ -1,9 +1,5 @@
 <?php
-	session_start();
-	require_once '../actions/db_connect.php';
-	if (!isset($_SESSION['login_userid'])){
-		header('location: log-in/login.php');
-	}
+	require_once 'actions/auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +14,7 @@
       type="image/x-icon"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
 
@@ -175,33 +171,33 @@
             </div>
             <div>
               <p>Middle Name</p>
-              <input type="text" placeholder="Mercado" name="fname" />
+              <input type="text" placeholder="Mercado" name="mname" />
             </div>
             <div>
               <p>Last Name</p>
-              <input type="text" placeholder="Dela Cruz" name="fname" />
+              <input type="text" placeholder="Dela Cruz" name="lname" />
             </div>
           </div>
           <!-- address -->
           <div class="ADDRESS-information">
             <div>
               <p>Province</p>
-              <input type="text" placeholder="Bulacan" name="fname" />
+              <input type="text" placeholder="Bulacan" name="province" />
             </div>
             <div>
               <p>Municipality</p>
-              <input type="text" placeholder="Malolos" name="fname" />
+              <input type="text" placeholder="Malolos" name="municipality" />
             </div>
             <div>
               <p>Barangay</p>
-              <input type="text" placeholder="PinagBiyakan" name="fname" />
+              <input type="text" placeholder="PinagBiyakan" name="barangay" />
             </div>
           </div>
           <!-- email and password -->
           <div class="EP-information">
             <div>
               <p>Email</p>
-              <input type="text" placeholder="JuanDelaCruz@gmail.com" name="fname" />
+              <input type="text" placeholder="JuanDelaCruz@gmail.com" name="email" />
             </div>
             <div>
               <p>Phone Number</p>
@@ -209,7 +205,7 @@
                 type="text"
                 placeholder="0924-490-9999"
                 style="margin-top: 5px"
-                name="fname" 
+                name="phone" 
               />
             </div>
           </div>
@@ -244,11 +240,11 @@
             </div>
             <div>
               <label>Civil Status : </label>
-              <select>
-                <option name="civil" value="Single">Single</option>
-                <option name="civil" value="Married">Married</option>
-                <option name="civil" value="Widowed">Widowed</option>
-                <option name="civil" value="Divorced">Divorced</option>
+              <select name="civil">
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Widowed">Widowed</option>
+                <option value="Divorced">Divorced</option>
               </select>
             </div>
           </div>
@@ -265,14 +261,14 @@
             </div> -->
             <div>
               <label>Program  </label>
-              <select>
-                <option name="program" value="1">Universal Access to Quality Tertiary Education(UAQTEA)</option>
-                <option name="program" value="2">Training for Work Scholarship Program(TWSP)</option>
-                <option name="program" value="3">Private Education Student Financial Assistance(PESFA)</option>
-                <option name="program" value="4">Special Training for Employment Program</option>
-                <option name="program" value="5">Tesda Online Program</option>
-                <option name="program" value="6">Rice Extension Service Program</option>
-                <option name="program" value="7">Tulong Trabaho Law</option>
+              <select name="program">
+                <option value="1">Universal Access to Quality Tertiary Education(UAQTEA)</option>
+                <option value="2">Training for Work Scholarship Program(TWSP)</option>
+                <option value="3">Private Education Student Financial Assistance(PESFA)</option>
+                <option value="4">Special Training for Employment Program</option>
+                <option value="5">Tesda Online Program</option>
+                <option value="6">Rice Extension Service Program</option>
+                <option value="7">Tulong Trabaho Law</option>
               </select>
             </div>
           </div>
@@ -309,4 +305,45 @@
       </div>
     </main>
   </body>
+  <script src="js/sweetalert2.all.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+			$('#scholar-frm').submit(function (e) {
+				e.preventDefault();
+				var form = $(this);
+
+				$.ajax({
+					url: 'actions/add_scholar.php',
+					method: 'POST',
+					data: $(this).serialize(),
+					error: (err) => {
+						console.log(err);
+						Swal.fire({
+							icon: 'error',
+							title: 'An error occurred',
+						});
+					},
+					success: function (resp) {
+            console.log(resp);
+            resp = JSON.parse(resp);
+						if (resp.status == 1) {
+							Swal.fire({
+								icon: 'success',
+								title: resp.msg,
+								showConfirmButton: false,
+								timer: 1500,
+							}).then(() => {
+                  window.location.href = 'studentDashboard/student.php';
+            });
+						} else {
+							Swal.fire({
+								icon: 'error',
+								title: resp.msg,
+							});
+						}
+					},
+				});
+			});
+		});
+  </script>
 </html>

@@ -1,14 +1,4 @@
-<?php
-    session_start();
-    require_once '../actions/db_connect.php';
-    if (isset($_SESSION['login_userid'])){
-        if ($_SESSION['login_usertype'] == '1') {
-            header('location: applyscholar.php');
-        } elseif ($_SESSION['login_usertype'] == '2') {
-            header('location: adminDashboard/admin.php');
-        }
-    }
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -121,7 +111,7 @@
 								timer: 1500,
 							}).then(() => {
               if (resp.userType == 1) {
-                if (resp.registeredStudent) {
+                if (resp.registeredStudent == true) {
                   window.location.href = '../studentDashboard/student.php';
                 } else {
                   window.location.href = '../applyscholar.php';
