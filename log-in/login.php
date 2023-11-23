@@ -109,7 +109,9 @@
 						});
 					},
 					success: function (resp) {
-						if (resp == true) {
+            console.log(resp);
+            resp = JSON.parse(resp);
+						if (resp.status == true) {
 							$('[name="username"]').val('');
 							$('[name="password"]').val('');
 							Swal.fire({
@@ -118,8 +120,16 @@
 								showConfirmButton: false,
 								timer: 1500,
 							}).then(() => {
-								location.replace('applyscholar.php');
-							});
+              if (resp.userType == 1) {
+                if (resp.registeredStudent) {
+                  window.location.href = '../studentDashboard/student.php';
+                } else {
+                  window.location.href = '../applyscholar.php';
+                }
+              } else if (resp.userType == 2) {
+                window.location.href = '../adminDashboard/admin.php';
+              }
+            });
 						} else {
 							Swal.fire({
 								icon: 'error',
