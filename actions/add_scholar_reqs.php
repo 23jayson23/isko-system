@@ -1,6 +1,17 @@
 <?php
 require_once 'auth.php';
 extract($_POST);
+
+// Check if the user has already submitted requirements
+$existingRequirementsQuery = "SELECT * FROM scholar_reqs WHERE user_id = '$uid'";
+$existingRequirementsResult = $conn->query($existingRequirementsQuery);
+
+if ($existingRequirementsResult->num_rows > 0) {
+    // User has already submitted requirements
+    echo json_encode(array('status' => 0, 'msg' => "You have already submitted requirements. You cannot submit new ones."));
+    exit();
+}
+
 // Check if images are set
 if (
     isset($_FILES['cor']['name']) && $_FILES['cor']['name'] != '' &&
