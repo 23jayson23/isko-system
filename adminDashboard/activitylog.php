@@ -46,12 +46,13 @@
                   <p>Personal Information</p>
                 </div>
                 <hr>
+                <input type="hidden" name="user_id" />
                 <div class="modal-info">
                   <div class="span">
                     <span>Name </span>
                   </div>
                   <div class="span">
-                      <input name="fullname" class="input" type="text" placeholder="Juan Carlos Benigno">
+                      <input name="fullname" class="input" type="text" placeholder="Juan Carlos Benigno" disabled>
                   </div>
                 </div>
                 <div class="modal-info">
@@ -59,7 +60,7 @@
                     <span>Address </span>
                   </div>
                   <div class="span">
-                      <input name="address" class="input" type="text" placeholder="012,Pinag Biyakan Malolos Bulacan">
+                      <input name="address" class="input" type="text" placeholder="012,Pinag Biyakan Malolos Bulacan" disabled>
                   </div>
                 </div>
                 <div class="modal-info">
@@ -117,7 +118,7 @@
                   </div>
                 </div>
                 <div class="button-modal">
-                  <button>
+                  <button class="saveUpdate">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                       <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375z" />
                       <path fill-rule="evenodd" d="M3.087 9l.54 9.176A3 3 0 006.62 21h10.757a3 3 0 002.995-2.824L20.913 9H3.087zm6.163 3.75A.75.75 0 0110 12h4a.75.75 0 010 1.5h-4a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
@@ -268,11 +269,11 @@
           >
             <div class="filter-search-container">
               <div class="filter-search">
-                <div class="filter">
+                <!-- <div class="filter">
                   <input type="text" placeholder="Filter By:" />
-                </div>
+                </div> -->
                 <div class="search-box">
-                  <input type="text" placeholder="Search" />
+                  <input id="search" type="text" placeholder="Search by name" />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -288,7 +289,7 @@
                 </div>
               </div>
               <div class="import-export">
-                <button>
+                <!-- <button>
                   <span>Import</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -304,7 +305,7 @@
                       d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"
                     />
                   </svg>
-                </button>
+                </button> -->
                 <button>
                   <span>Export</span>
                   <svg
@@ -337,15 +338,61 @@
                       <th>Action</th>
                     </tr>
                   </thead>
-                  <tbody> <!--CONTINUE HERE, DO PRINTING PDF, SEARCH, AND THIS PAGE -->
-                    <tr>
-                      <td>104829060123</td>
-                      <td>Guevara</td>
-                      <td>Jazmine</td>
-                      <td>11-17-2023</td>
-                      <td>NC II</td>
-                      <td class="status">Started</td>
-                      <td class="action">
+                  <tbody id="act-tbl"> <!--CONTINUE HERE, DO PRINTING PDF, SEARCH, AND THIS PAGE -->
+                  <?php
+                        if (isset($_GET['page_no']) && $_GET['page_no']!="") {
+                            $page_no = $_GET['page_no'];
+                            } else {
+                                $page_no = 1;
+                                }
+                                $total_records_per_page = 5;
+                                $offset = ($page_no-1) * $total_records_per_page;
+                                $previous_page = $page_no - 1;
+                                $next_page = $page_no + 1;
+                                $adjacents = "2"; 
+
+                                $result_count = $conn->query("SELECT COUNT(*) As total_records FROM `scholar` LEFT JOIN program ON scholar.program_id = program.program_id WHERE scholar.status != 'X' AND scholar.status != 'D' AND scholar.status != 'P'");
+                                $total_records = $result_count->fetch_assoc()['total_records'];
+                                $total_no_of_pages = ceil($total_records / $total_records_per_page);
+                                $second_last = $total_no_of_pages - 1; // total page minus 1
+                                $result = $conn->query("SELECT scholar.*, program.*, scholar.create_date AS scholar_create_date FROM `scholar` LEFT JOIN program ON scholar.program_id = program.program_id WHERE scholar.status != 'X' AND scholar.status != 'D' AND scholar.status != 'P' ORDER BY scholar.update_date DESC LIMIT $offset, $total_records_per_page");
+                                while($row = $result->fetch_assoc()){
+                                    $status_display = ($row['status'] == 'A') ? 'Active' : (($row['status'] == 'I') ? 'Inactive' : 'Not Yet Approved');
+                                    $newdate = date('F d, Y', strtotime($row['scholar_create_date']));
+                            echo "<tr>
+                                <td>".$row['lrn_id']."</td>
+                                <td>".$row['lname']."</td>
+                                <td>".$row['fname']."</td>
+                                <td>".$newdate."</td>
+                                <td>".$row['program_name']."</td>
+                                <td>".$status_display."</td>
+                                <td class='action'>
+                                <button class='view' onclick='viewInfo()' data-id='".$row['user_id']."'>
+                                  <svg
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    viewBox='0 0 20 20'
+                                    fill='currentColor'
+                                    class='w-5 h-5'
+                                  >
+                                    <path
+                                      d='M5.433 13.917l1.262-3.155A4 4 0 017.58 9.42l6.92-6.918a2.121 2.121 0 013 3l-6.92 6.918c-.383.383-.84.685-1.343.886l-3.154 1.262a.5.5 0 01-.65-.65z'
+                                    />
+                                    <path
+                                      d='M3.5 5.75c0-.69.56-1.25 1.25-1.25H10A.75.75 0 0010 3H4.75A2.75 2.75 0 002 5.75v9.5A2.75 2.75 0 004.75 18h9.5A2.75 2.75 0 0017 15.25V10a.75.75 0 00-1.5 0v5.25c0 .69-.56 1.25-1.25 1.25h-9.5c-.69 0-1.25-.56-1.25-1.25v-9.5z'
+                                    />
+                                  </svg>
+                                </button>
+                                <button class='delete' data-id='".$row['user_id']."'>
+                                  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6'>
+                                    <path fill-rule='evenodd' d='M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z' clip-rule='evenodd' />
+                                  </svg>        
+                                </button>
+                                </td>
+                            </tr>";
+                                }
+                                $conn->close();
+                                ?>
+                      <!-- <td class="action">
                         <button onclick="viewInfo()">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -366,23 +413,35 @@
                             <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
                           </svg>        
                         </button>
-                      </td>
+                      </td> -->
                     </tr>
                   </tbody>
                 </table>
               </div>
               <div class="pagination">
                 <div class="pagination-container">
-                  <a href="#">&laquo;</a>
-                  <a href="#">1</a>
-                  <a href="#" class="active">2</a>
-                  <a href="#">3</a>
-                  <a href="#">4</a>
-                  <a href="#">5</a>
-                  <a href="#">6</a>
-                  <a href="#">&raquo;</a>
+                    <?php if($page_no > 1){ ?>
+                        <a href="?page_no=1">&laquo;</a>
+                    <?php } ?>
+
+                    <?php 
+                    $start = ($page_no - 5) > 0 ? ($page_no - 5) : 1;
+                    $end = ($page_no + 5) <= $total_no_of_pages ? ($page_no + 5) : $total_no_of_pages;
+
+                    for ($i = $start; $i <= $end; $i++) {
+                        if ($i == $page_no) {
+                            echo "<a class='active' href='?page_no=$i'>$i</a>";
+                        } else {
+                            echo "<a href='?page_no=$i'>$i</a>";
+                        }
+                    }
+                    ?>
+
+                    <?php if($page_no < $total_no_of_pages){ ?>
+                        <a href="?page_no=<?php echo $total_no_of_pages; ?>">&raquo;</a>
+                    <?php } ?>
                 </div>
-              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -404,6 +463,120 @@ function closeModal(){
   </script>
   <script src="../js/sweetalert2.all.min.js"></script>
   <script type="text/javascript">
+    $(document).ready(function () {
+      $(document).on('click', '.delete', function () {
+				var user_id = $(this).attr('data-id');
+				Swal.fire({
+					title: 'Are you sure?',
+					text: "Do you want to delete this scholar?",
+					icon: 'info',
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Yes, delete it!',
+				}).then((result) => {
+					if (result.isConfirmed) {
+						$.ajax({
+							url: '../actions/delete_scholar.php?user_id=' + user_id,
+							error: (err) => console.log(err),
+							success: function (resp) {
+								if (typeof resp != undefined) {
+									resp = JSON.parse(resp);
+									if (resp.status == 1) {
+										Swal.fire('Success!', resp.msg, 'success').then(() => {
+											location.reload();
+										});
+									}
+								}
+							},
+						});
+					}
+				});
+			});
+      $(document).on('click', '.view', function(){
+				var $user_id=$(this).attr('data-id');
+				$.ajax({
+					url:'../actions/get_all_scholar_info_by_id.php',
+					method:"POST",
+					data:{user_id:$user_id},
+					error:err=>console.log(),
+					success:function(resp){
+                        console.log(resp);
+						if(typeof resp !=undefined){
+							resp = JSON.parse(resp)
+                            console.log(resp);
+							$('[name="user_id"]').val(resp.user_id)
+							$('[name="boldname"]').text(resp.fname + ' ' + resp.mname + ' ' + resp.lname)
+							$('[name="fullname"]').val(resp.fname + ' ' + resp.mname + ' ' + resp.lname)
+							$('[name="address"]').val(resp.barangay + ', ' + resp.municipality + ', ' + resp.province)
+							$('[name="email"]').val(resp.email)
+							$('[name="phone"]').val(resp.phone)
+							$('[name="gender"]').val(resp.gender)
+							$('[name="program"]').val(resp.program_id)
+							$('[name="status"]').val(resp.status)
+                            $('.saveUpdate').click(function() {
+                                var isSaveButton = $(this).hasClass('saveUpdate');
+                                if (isSaveButton) {
+                                    var user_id = $('[name="user_id"]').val();
+                                    var email = $('[name="email"]').val();
+                                    var phone = $('[name="phone"]').val();
+                                    var gender = $('[name="gender"]').val();
+                                    var program_id = $('[name="program"]').val();
+                                    var status = $('[name="status"]').val();
+                                    var data = {
+                                        user_id: user_id,
+                                        email: email,
+                                        phone: phone,
+                                        gender: gender,
+                                        program_id: program_id,
+                                        status: status
+                                    }
+                                    console.log(data);
+                                    $.ajax({
+                                        url: '../actions/update_scholar.php',
+                                        method: 'POST',
+                                        data: data,
+                                        error: err => console.log(err),
+                                        success: function(resp) {
+                                          console.log(resp);
+                                            if (typeof resp != undefined) {
+                                                resp = JSON.parse(resp);
+                                                if (resp.status == 1) {
+                                                    Swal.fire('Success!', resp.msg, 'success').then(() => { // FIX THIS ALERT!!!
+                                                        location.reload();
+                                                    });
+                                                }
+                                            }
+                                        }
+                                    });
+                                }
+                                // window.location.href = window.location.href;
+                            });
 
+
+                            console.log(resp.id);
+						}
+					}
+				})
+                
+			});
+      var originalTableContent = $("#act-tbl").html();
+      $("#search").on("input", function() {
+					var searchText = $(this).val();
+          if (searchText === "") {
+              // Use the original data directly
+              $("#act-tbl").html(originalTableContent);
+              return;
+          }
+					if (searchText == "") return;
+					// If the search key is not empty, make the AJAX request
+            $.post('../actions/search_activitylog.php', { key: searchText },
+                function(data, status) {
+                    console.log(data);
+                    $("#act-tbl").html(data);
+                }
+            );
+				});
+    });
   </script>
 </html>

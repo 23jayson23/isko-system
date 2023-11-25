@@ -131,7 +131,7 @@
                 d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"
               />
             </svg>
-            <a href="activitylog.html">Process</a>
+            <a href="activitylog.php">Process</a>
           </li>
           <li>
             <svg
@@ -151,7 +151,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <a href="reports.html">Reports</a>
+            <a href="reports.php">Reports</a>
           </li>
           <li>
             <svg
@@ -261,8 +261,8 @@
               <img src="../assets/image/active.png">
             </div>
             <div>
-              <strong id="active">9,999+</strong>
-              <p>Active</p>
+              <strong id="inactive">9,999+</strong>
+              <p>Inactive</p>
             </div>
           </div>
 
@@ -272,8 +272,8 @@
               <img src="../assets/image/not active.png">
             </div>
             <div>
-              <strong id="inactive">9,999+</strong>
-              <p>Not Active</p>
+              <strong id="declined">9,999+</strong>
+              <p>Declined</p>
             </div>
           </div>
         </div>
@@ -751,11 +751,11 @@
             var approved = data.approved;
             var pending = data.pending;
             var inactive = data.inactive;
-            var deleted = data.deleted;
+            var declined = data.declined;
             $('#approved').text(approved);
             $('#pending').text(pending);
-            $('#active').text(inactive);
-            $('#inactive').text(deleted);
+            $('#inactive').text(inactive);
+            $('#declined').text(declined);
         },
         error: function(error) {
             console.log('Error:', error);

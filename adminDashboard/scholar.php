@@ -198,11 +198,11 @@
         <div class="reports-container" data-aos="fade-up" data-aos-duration="3000">
           <div class="filter-search-container">
             <div class="filter-search">
-              <div class="filter">
+              <!-- <div class="filter">
                 <input type="text" placeholder="Filter By:" />
-              </div>
+              </div> -->
               <div class="search-box">
-                <input type="text" placeholder="Search" />
+                <input id="search" name="search" type="text" placeholder="Search by name" />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                   <path fill-rule="evenodd"
                     d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
@@ -211,14 +211,14 @@
               </div>
             </div>
             <div class="import-export">
-              <button>
+              <!-- <button>
                 <span>Import</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
                 </svg>
-              </button>
+              </button> -->
               <button>
                 <span>Export</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
@@ -246,7 +246,7 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="scholar-tbl">
                 <?php
                         if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                             $page_no = $_GET['page_no'];
@@ -259,11 +259,11 @@
                                 $next_page = $page_no + 1;
                                 $adjacents = "2"; 
 
-                                $result_count = $conn->query("SELECT COUNT(*) As total_records FROM `scholar`");
+                                $result_count = $conn->query("SELECT COUNT(*) As total_records FROM `scholar` LEFT JOIN program ON scholar.program_id = program.program_id LEFT JOIN scholar_reqs ON scholar.user_id = scholar_reqs.user_id WHERE scholar.status = 'P' AND scholar_reqs.user_id IS NOT NULL");
                                 $total_records = $result_count->fetch_assoc()['total_records'];
                                 $total_no_of_pages = ceil($total_records / $total_records_per_page);
                                 $second_last = $total_no_of_pages - 1; // total page minus 1
-                                $result = $conn->query("SELECT * FROM `scholar` LEFT JOIN program ON scholar.program_id = program.program_id WHERE scholar.status = 'P' ORDER BY scholar.update_date DESC LIMIT $offset, $total_records_per_page");
+                                $result = $conn->query("SELECT * FROM `scholar` LEFT JOIN program ON scholar.program_id = program.program_id LEFT JOIN scholar_reqs ON scholar.user_id = scholar_reqs.user_id WHERE scholar.status = 'P' AND scholar_reqs.user_id IS NOT NULL ORDER BY scholar.update_date DESC LIMIT $offset, $total_records_per_page");
                                 while($row = $result->fetch_assoc()){
                                     $status_display = ($row['status'] == 'P') ? 'Pending' : 'Approved';
                             echo "<tr>
@@ -384,7 +384,7 @@
 				var user_id = $(this).attr('data-id');
 				Swal.fire({
 					title: 'Are you sure?',
-					text: "Do you want to approve this employee?",
+					text: "Do you want to approve this scholar?",
 					icon: 'info',
 					showCancelButton: true,
 					confirmButtonColor: '#3085d6',
@@ -413,7 +413,7 @@
 				var user_id = $(this).attr('data-id');
 				Swal.fire({
 					title: 'Are you sure?',
-					text: "Do you want to decline this employee?",
+					text: "Do you want to decline this scholar?",
 					icon: 'info',
 					showCancelButton: true,
 					confirmButtonColor: '#3085d6',
@@ -496,7 +496,34 @@
 				})
                 
 			});
-
+      var originalTableContent = $("#scholar-tbl").html();
+      $("#search").on("input", function() {
+					var searchText = $(this).val();
+          if (searchText === "") {
+              // Use the original data directly
+              $("#scholar-tbl").html(originalTableContent);
+              return;
+          }
+					if (searchText == "") return;
+					// If the search key is not empty, make the AJAX request
+            $.post('../actions/search_scholar.php', { key: searchText },
+                function(data, status) {
+                    console.log(data);
+                    $("#scholar-tbl").html(data);
+                }
+            );
+				});
+        // $("#search").on("input", function() {
+				// 	var searchText = $(this).val();
+				// 	if (searchText == "") return;
+				// 	$.post('../actions/search_scholar.php', {
+				// 			key: searchText
+				// 		},
+				// 		function(data, status) {
+        //                     console.log(data)
+				// 			$("#scholar-tbl").html(data);
+				// 		});
+				// });
     })
 </script>
 

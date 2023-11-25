@@ -1,10 +1,4 @@
-<?php
-	session_start();
-	require_once '../actions/db_connect.php';
-	if (isset($_SESSION['login_userid'])){
-		header('location: applyscholar.php');
-	}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -129,7 +123,7 @@
 								showConfirmButton: false,
 								timer: 1500,
 							}).then(() => {
-								location.replace('main_dashboard.php');
+								location.replace('../applyscholar.php');
 							});
 						} else {
                             console.log(resp);

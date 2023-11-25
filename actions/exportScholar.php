@@ -47,13 +47,13 @@ class PDF extends TCPDF
 
 
 // create new PDF document
-$pdf = new PDF('p', 'mm', 'A4', true, 'UTF-8', false);
+$pdf = new PDF('l', 'mm', 'A4', true, 'UTF-8', false);
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
 $pdf->SetAuthor('TESDA Scholarship Monitoring System');
-$pdf->SetTitle('Scholar Data');
-$pdf->SetSubject('Scholar Data');
+$pdf->SetTitle('Exported Data');
+$pdf->SetSubject('TCertificate of Employment');
 $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
 // set default header data
@@ -96,11 +96,14 @@ $pdf->SetFont('dejavusans', '', 14, '', true);
 // This method has several options, check the source code documentation for more information.
 $pdf->AddPage();
 
-$pdf->Ln(20);
-$pdf->SetFont('times','BU',15);
-$pdf->Cell(189, 3, 'Scholar Information', 0, 1, 'C');
+// $pdf->Ln(30);
+// $pdf->SetFont('times','BU',15);
+// $pdf->Cell(189, 3, 'CERTIFICATION', 0, 1, 'C');
 // $pdf->Ln(10);
-$pdf->SetFont('times','', 11);
+// $pdf->SetFont('times','B',11);
+// $pdf->Cell(189,5,'To Whom This May Concern:',0,1);
+// $pdf->Ln(10);
+// $pdf->SetFont('times','', 11);
 // if ($data['emp_status'] == '1'){
 //         $html = '<p style="text-align: justify;text-indent:40px;">This is to certify that<b> MR./MS. '. $data['firstname'].' '.$data['lastname'].' </b>is a bonafide employee of Teh Hsin Enterprise Phils. Corporation with employment records, as follows:</p>';
 // } else {
@@ -108,9 +111,9 @@ $pdf->SetFont('times','', 11);
 // }
 // $pdf->writeHTML($html,true,false,true,false,'');
 
-$pdf->Ln(5);
-$pdf->Cell(20);
-$pdf->Cell(50, 10, 'Date Hired', 0, 0,);
+// $pdf->Ln(5);
+// $pdf->Cell(20);
+// $pdf->Cell(50, 10, 'Date Hired', 0, 0);
 // $pdf->Cell(10);
 // $pdf->Cell(10, 10, ':', 0, 0);
 // $pdf->Cell(10);
