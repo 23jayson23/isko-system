@@ -12,6 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link
       rel="shortcut icon"
       href="../assets/image/tesda-center-logo.png"
@@ -153,7 +154,7 @@
             </svg>
             <a href="reports.php">Reports</a>
           </li>
-          <li>
+          <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -165,10 +166,10 @@
               />
             </svg>
             <a href="">Announcement</a>
-          </li>
+          </li> -->
         </ul>
         <ul>
-          <li>
+          <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -182,7 +183,7 @@
               />
             </svg>
             <a href="">Settings</a>
-          </li>
+          </li> -->
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -734,11 +735,76 @@
             </div>
           </div>
         </div>
+        <div class="pie-graph-container">
+          <div class="pie-child" data-aos="fade-up" data-aos-duration="3000">
+            <canvas id="myChart" style="width: 100%; max-width: 900px"></canvas>
+          </div>
+        </div>
       </div>
     </div>
     <!-- modal -->
   </body>
   <script src="admin.js"></script>
+  <script>
+    const xValues = [
+      "Universal Access to Quality Tertiary Education(UAQTEA)",
+      "Training for Work Scholarship Program(TWSP)",
+      "Private Education Student Financial Assistance(PESFA)",
+      "Special Training for Employment Program",
+      "Tesda Online Program",
+      "Rice Extension Service Program",
+      "Tulong Trabaho Law",
+    ];
+    $.ajax({
+      url: "../actions/get_scholar_by_program.php",
+      type: "GET",
+      dataType: "json",
+      success: function (data) {
+        console.log(data);
+        var program1 = data.program1;
+        var program2 = data.program2;
+        var program3 = data.program3;
+        var program4 = data.program4;
+        var program5 = data.program5;
+        var program6 = data.program6;
+        var program7 = data.program7;
+
+        const yValues = [program1, program2, program3, program4, program5, program6, program7];
+      // const yValues = [1, 1, 1, 0, 0, 1, 1];
+        const barColors = [
+          "#DDF2FD",
+          "#29ADB2",
+          "#C5E898",
+          "#164863",
+          "#427D9D",
+          "#9BBEC8",
+        ];
+
+        new Chart("myChart", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [
+              {
+                backgroundColor: barColors,
+                data: yValues,
+              },
+            ],
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Course Percentage",
+            },
+          },
+        });
+      },
+      error: function (error) {
+        console.log("Error:", error);
+      },
+    });
+    
+  </script>
   <script src="../js/sweetalert2.all.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
@@ -761,6 +827,7 @@
             console.log('Error:', error);
         }
     });
+
     });
   </script>
 </html>

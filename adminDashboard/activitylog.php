@@ -197,7 +197,7 @@
             </svg>
             <a href="reports.php">Reports</a>
           </li>
-          <li>
+          <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -210,10 +210,10 @@
             </svg>
 
             <a href="">Announcement</a>
-          </li>
+          </li> -->
         </ul>
         <ul>
-          <li>
+          <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -227,7 +227,7 @@
               />
             </svg>
             <a href="">Settings</a>
-          </li>
+          </li> -->
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
