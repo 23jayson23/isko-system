@@ -375,43 +375,15 @@
       },
     });
     //bar graph for Scholar
-    const scholarXvalues = [
-      "Janurary",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    const scholarColor = [
-      "#FF8080",
-      "#B5CB99",
-      "#FCE09B",
-      "#B2533E",
-      "#FF8080",
-      "#FFCF96",
-      "#F6FDC3",
-      "#CDFAD5",
-      "#D2E0FB",
-      "#F9F3CC",
-      "#8EACCD",
-      "#419197",
-    ];
     const scholarYvalue = [55, 49, 44, 24, 15, 30, 19, 13, 18, 29, 100, 70];
 
     new Chart("GraphScholar", {
       type: "bar",
       data: {
-        labels: scholarXvalues,
+        labels: xbarValues,
         datasets: [
           {
-            backgroundColor: scholarColor,
+            backgroundColor: barGraphColors,
             data: scholarYvalue,
           },
         ],
