@@ -545,3 +545,27 @@ ul li a {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+.Announcement-modal{
+  width: auto;
+  position: relative;
+  border-radius: 20px;
+}
+.Announcement-child{
+  width: auto;
+  height: 400px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0;
+  -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+  -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+  box-shadow: 3px 3px 10px 3px #dddddd;
+}
+.Announcement-child textarea{
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: none;
+  height: 100%;
+  margin: 0;
+}

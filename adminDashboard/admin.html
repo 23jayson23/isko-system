@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link
       rel="shortcut icon"
       href="../assets/image/tesda-center-logo.png"
@@ -20,68 +21,37 @@
   <body>
     <div class="modal-main" id="personalinfo">
       <div class="modal-container">
-          <div class="main-modal" >
-            <div class="modal-title">
-              <button onclick="closeModal()">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
-                </svg>
-              </button>
-            </div>
-            <div class="modal-image-container">
-              <img src="../assets/image/program course.jpg">
-            </div>
-            <div class="modal-NS">
-              <strong>Arnold Bartolome Jr</strong>
-              <p>Student</p>
-            </div>
-            <hr>
-            <br>
-            <div class="modal-information">
-                <div>
-                  <p>Personal Information</p>
-                </div>
-                <hr>
-                <div class="modal-info">
-                  <span>Name </span>
-                  <span>Juan Carlos Benigno</span>
-                </div>
-                <div class="modal-info">
-                  <span>Address </span>
-                  <span>012,Pinag Biyakan Malolos Bulacan</span>
-                </div>
-                <div class="modal-info">
-                  <span>Email </span>
-                  <span>Juankamo@gmail.com</span>
-                </div>
-                <div class="modal-info">
-                  <span>Phone Number </span>
-                  <span>0999-999-9999</span>
-                </div>
-                <div class="modal-info">
-                  <span>Gender </span>
-                  <span>Male</span>
-                </div>
-                <div class="modal-info">
-                  <span>Program </span>
-                  <span>NC II NURSING</span>
-                </div>
-                <div class="modal-info">
-                  <span>Semester </span>
-                  <span>1st Sem</span>
-                </div>
-                <div class="button-modal">
-                  <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                      <path fill-rule="evenodd" d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 003 3h.27l-.155 1.705A1.875 1.875 0 007.232 22.5h9.536a1.875 1.875 0 001.867-2.045l-.155-1.705h.27a3 3 0 003-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0018 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM16.5 6.205v-2.83A.375.375 0 0016.125 3h-8.25a.375.375 0 00-.375.375v2.83a49.353 49.353 0 019 0zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 01-.374.409H7.232a.375.375 0 01-.374-.409l.526-5.784a.373.373 0 01.333-.337 41.741 41.741 0 018.566 0zm.967-3.97a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H18a.75.75 0 01-.75-.75V10.5zM15 9.75a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V10.5a.75.75 0 00-.75-.75H15z" clip-rule="evenodd" />
-                    </svg>           
-                  </button>
-                </div>
+        <div class="main-modal">
+          <div class="modal-title">
+            <button onclick="closeModal()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="Announcement-modal">
+            <div class="Announcement-child">
+              <textarea></textarea>
             </div>
           </div>
-      </div>
+            <div class="button-modal">
+              <button>
+                Post
+              </button>
+            </div>
+          </div>
+        </div>
     </div>
-    <div class="main-container">
+    <div class="main-container visible=hidden" >
       <div class="side-panel">
         <ul>
           <img src="../assets/image/logo-title.png" width="220px" />
@@ -127,7 +97,7 @@
                 d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"
               />
             </svg>
-            <a href="activitylog.html">Process</a>
+            <a href="activitylog.html">Progress</a>
           </li>
           <li>
             <svg
@@ -160,7 +130,7 @@
                 d="M16.881 4.346A23.112 23.112 0 018.25 6H7.5a5.25 5.25 0 00-.88 10.427 21.593 21.593 0 001.378 3.94c.464 1.004 1.674 1.32 2.582.796l.657-.379c.88-.508 1.165-1.592.772-2.468a17.116 17.116 0 01-.628-1.607c1.918.258 3.76.75 5.5 1.446A21.727 21.727 0 0018 11.25c0-2.413-.393-4.735-1.119-6.904zM18.26 3.74a23.22 23.22 0 011.24 7.51 23.22 23.22 0 01-1.24 7.51c-.055.161-.111.322-.17.482a.75.75 0 101.409.516 24.555 24.555 0 001.415-6.43 2.992 2.992 0 00.836-2.078c0-.806-.319-1.54-.836-2.078a24.65 24.65 0 00-1.415-6.43.75.75 0 10-1.409.516c.059.16.116.321.17.483z"
               />
             </svg>
-            <a href="">Announcement</a>
+            <a href="#" onclick="viewInfo()">Announcement</a>
           </li>
         </ul>
         <ul>
@@ -229,10 +199,13 @@
         </div>
         <!-- data-container -->
         <div class="data-container">
-          <div class="count-container" data-aos="fade-up"
-          data-aos-duration="400">
+          <div
+            class="count-container"
+            data-aos="fade-up"
+            data-aos-duration="400"
+          >
             <div>
-              <img src="../assets/image/scholar.png">
+              <img src="../assets/image/scholar.png" />
             </div>
             <div>
               <strong>9,999+</strong>
@@ -240,10 +213,13 @@
             </div>
           </div>
 
-          <div class="count-container" data-aos="fade-up"
-          data-aos-duration="400">
+          <div
+            class="count-container"
+            data-aos="fade-up"
+            data-aos-duration="400"
+          >
             <div>
-              <img src="../assets/image/applicant.png">
+              <img src="../assets/image/applicant.png" />
             </div>
             <div>
               <strong>9,999+</strong>
@@ -251,10 +227,13 @@
             </div>
           </div>
 
-          <div class="count-container" data-aos="fade-up"
-          data-aos-duration="400">
+          <div
+            class="count-container"
+            data-aos="fade-up"
+            data-aos-duration="400"
+          >
             <div>
-              <img src="../assets/image/active.png">
+              <img src="../assets/image/active.png" />
             </div>
             <div>
               <strong>9,999+</strong>
@@ -262,10 +241,13 @@
             </div>
           </div>
 
-          <div class="count-container" data-aos="fade-up"
-          data-aos-duration="600">
+          <div
+            class="count-container"
+            data-aos="fade-up"
+            data-aos-duration="600"
+          >
             <div>
-              <img src="../assets/image/not active.png">
+              <img src="../assets/image/not active.png" />
             </div>
             <div>
               <strong>9,999+</strong>
@@ -275,292 +257,16 @@
         </div>
         <!-- data ang graph -->
         <div class="data-graph-container">
-          <!-- <div class="user-container" data-aos="fade-up"
-            data-aos-duration="3000">
-            <div class="user-report">
-              <table>
-                <thead>
-                  <tr>
-                    <td>ID</td>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Program</td>
-                    <td>Action</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr><tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr><tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr><tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>1202909</td>
-                    <td>Jasmine</td>
-                    <td>Reyes</td>
-                    <td>Electronic</td>
-                    <td onclick="viewInfo()">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path fill-rule="evenodd" d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z" clip-rule="evenodd" />
-                      </svg>                      
-                    </td>
-                  </tr>
-                  
-                </tbody>
-              </table>
-            </div>
-          </div> -->
-          <div class="graph-container" data-aos="fade-left"
-            data-aos-duration="3000">
+          <div
+            class="graph-container"
+            data-aos="fade-left"
+            data-aos-duration="3000"
+          >
             <div class="graph-one">
               <div id="my-chart">
                 <table
-                  class="charts-css column hide-data show-labels datasets-spacing-3 show-8-secondary-axes">
+                  class="charts-css column hide-data show-labels datasets-spacing-3 show-8-secondary-axes"
+                >
                   <thead>
                     <tr>
                       <th scope="col">Month</th>
@@ -640,7 +346,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div style="text-align: center; width: 100%; margin-top: 10px;">
+                <div style="text-align: center; width: 100%; margin-top: 10px">
                   <label>Data of Scholars</label>
                 </div>
               </div>
@@ -723,11 +429,17 @@
                     </tr>
                   </tbody>
                 </table>
-                <div style="text-align: center; width: 100%; margin-top: 10px;">
-                  <label >Data of Applications</label>
+                <div style="text-align: center; width: 100%; margin-top: 10px">
+                  <label>Data of Applications</label>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <!-- pie -->
+        <div class="pie-graph-container">
+          <div class="pie-child" data-aos="fade-up" data-aos-duration="3000">
+            <canvas id="myChart" style="width: 100%; max-width: 900px"></canvas>
           </div>
         </div>
       </div>
@@ -735,4 +447,43 @@
     <!-- modal -->
   </body>
   <script src="admin.js"></script>
+  <script>
+    const xValues = [
+      "Universal Access to Quality Tertiary Education(UAQTEA)",
+      "Training for Work Scholarship Program(TWSP)",
+      "Private Education Student Financial Assistance(PESFA)",
+      "Special Training for Employment Program",
+      "Tesda Online Program",
+      "Rice Extension Service Program",
+      "Tulong Trabaho Law",
+    ];
+    const yValues = [55, 49, 44, 24, 15, 30, 10];
+    const barColors = [
+      "#DDF2FD",
+      "#29ADB2",
+      "#C5E898",
+      "#164863",
+      "#427D9D",
+      "#9BBEC8",
+    ];
+
+    new Chart("myChart", {
+      type: "pie",
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            backgroundColor: barColors,
+            data: yValues,
+          },
+        ],
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Course Percentage",
+        },
+      },
+    });
+  </script>
 </html>
