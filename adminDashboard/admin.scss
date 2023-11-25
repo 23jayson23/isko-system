@@ -349,7 +349,6 @@ tbody tr td svg {
   width: 30%;
   padding: 20px;
   transition: ease-in-out 0.5s;
-  height: 700px;
   animation-name: slideIn;
   animation-duration: 0.4s
 }
@@ -449,7 +448,10 @@ tbody tr td svg {
   justify-content: center;
 }
 .button-modal button{
-  width: 95%;
+  width: 500px;
+  padding: 20px;
+  color: #ffffff;
+  font-weight: 800;
   cursor: pointer;
   background: #164863;
   outline: none;
@@ -482,4 +484,29 @@ tbody tr td svg {
   align-items: center;
   flex-wrap: wrap;
   padding: 30px;
+}
+.Announcement-modal{
+  width: auto;
+  position: relative;
+  border-radius: 20px;
+}
+.Announcement-child{
+  width: auto;
+  height: 400px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0;
+  -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
+  -moz-box-shadow: 3px 3px 10px 3px #dddddd;
+  box-shadow: 3px 3px 10px 3px #dddddd;
+}
+.Announcement-child textarea{
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: none;
+  height: 100%;
+  margin: 0;
 }
