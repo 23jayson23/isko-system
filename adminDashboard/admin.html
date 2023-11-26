@@ -43,15 +43,13 @@
               <textarea></textarea>
             </div>
           </div>
-            <div class="button-modal">
-              <button>
-                Post
-              </button>
-            </div>
+          <div class="button-modal">
+            <button>Post</button>
           </div>
         </div>
+      </div>
     </div>
-    <div class="main-container visible=hidden" >
+    <div class="main-container visible=hidden">
       <div class="side-panel">
         <ul>
           <img src="../assets/image/logo-title.png" width="220px" />
@@ -260,179 +258,19 @@
           <div
             class="graph-container"
             data-aos="fade-left"
-            data-aos-duration="3000"
+            data-aos-duration="1000"
           >
             <div class="graph-one">
-              <div id="my-chart">
-                <table
-                  class="charts-css column hide-data show-labels datasets-spacing-3 show-8-secondary-axes"
-                >
-                  <thead>
-                    <tr>
-                      <th scope="col">Month</th>
-                      <th scope="col">Progress</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Jan</th>
-                      <td style="--size: calc(20 / 100)">
-                        <span class="data"> 30 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Feb</th>
-                      <td style="--size: 0.5">
-                        <span class="data" style="color: #fff"> 50 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Mar</th>
-                      <td style="--size: 0.8">
-                        <span class="data"> 80 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Apr</th>
-                      <td style="--size: 1"><span class="data"> 100 </span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">May</th>
-                      <td style="--size: 0.65">
-                        <span class="data"> 65 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Jun</th>
-                      <td style="--size: 0.45">
-                        <span class="data"> 45 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Jul</th>
-                      <td style="--size: 0.15">
-                        <span class="data"> 15 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Aug</th>
-                      <td style="--size: 0.32">
-                        <span class="data"> 32 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Sep</th>
-                      <td style="--size: 0.6">
-                        <span class="data"> 60 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Oct</th>
-                      <td style="--size: 0.9">
-                        <span class="data"> 90 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Nov</th>
-                      <td style="--size: 0.55">
-                        <span class="data"> 55 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Dec</th>
-                      <td style="--size: 0.4">
-                        <span class="data"> 40 </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div style="text-align: center; width: 100%; margin-top: 10px">
-                  <label>Data of Scholars</label>
-                </div>
-              </div>
+              <canvas
+                id="GraphApplication"
+                style="width: 100%; max-width: 600px"
+              ></canvas>
             </div>
             <div class="graph-two">
-              <div id="my-chart">
-                <table
-                  class="charts-css column hide-data show-labels data-spacing-3 show-data-axes show-4-secondary-axes"
-                >
-                  <tbody>
-                    <tr>
-                      <th scope="row ">Jan</th>
-                      <td style="--size: calc(20 / 100)">
-                        <span class="data"> 30 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Feb</th>
-                      <td style="--size: 0.5">
-                        <span class="data" style="color: #fff"> 50 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Mar</th>
-                      <td style="--size: 0.8">
-                        <span class="data"> 80 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Apr</th>
-                      <td style="--size: 1"><span class="data"> 100 </span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">May</th>
-                      <td style="--size: 0.65">
-                        <span class="data"> 65 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Jun</th>
-                      <td style="--size: 0.45">
-                        <span class="data"> 45 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Jul</th>
-                      <td style="--size: 0.15">
-                        <span class="data"> 15 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Aug</th>
-                      <td style="--size: 0.32">
-                        <span class="data"> 32 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Sep</th>
-                      <td style="--size: 0.6">
-                        <span class="data"> 60 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Oct</th>
-                      <td style="--size: 0.9">
-                        <span class="data"> 90 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Nov</th>
-                      <td style="--size: 0.55">
-                        <span class="data"> 55 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Dec</th>
-                      <td style="--size: 0.4">
-                        <span class="data"> 40 </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div style="text-align: center; width: 100%; margin-top: 10px">
-                  <label>Data of Applications</label>
-                </div>
-              </div>
+              <canvas
+                id="GraphScholar"
+                style="width: 100%; max-width: 600px"
+              ></canvas>
             </div>
           </div>
         </div>
@@ -465,6 +303,7 @@
       "#164863",
       "#427D9D",
       "#9BBEC8",
+      "#fbaf03",
     ];
 
     new Chart("myChart", {
@@ -482,6 +321,79 @@
         title: {
           display: true,
           text: "Course Percentage",
+        },
+      },
+    });
+
+    //bar graph for application
+    const xbarValues = [
+      "Janurary",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const barGraphColors = [
+      "#FF8080",
+      "#B5CB99",
+      "#FCE09B",
+      "#B2533E",
+      "#FF8080",
+      "#FFCF96",
+      "#F6FDC3",
+      "#CDFAD5",
+      "#D2E0FB",
+      "#F9F3CC",
+      "#8EACCD",
+      "#419197",
+    ];
+    const ybarValues = [55, 49, 44, 24, 15, 30, 19, 13, 18, 29, 100, 70];
+
+    new Chart("GraphApplication", {
+      type: "bar",
+      data: {
+        labels: xbarValues,
+        datasets: [
+          {
+            backgroundColor: barGraphColors,
+            data: ybarValues,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: "Data of Application",
+        },
+      },
+    });
+    //bar graph for Scholar
+    const scholarYvalue = [55, 49, 44, 24, 15, 30, 19, 13, 18, 29, 100, 70];
+
+    new Chart("GraphScholar", {
+      type: "bar",
+      data: {
+        labels: xbarValues,
+        datasets: [
+          {
+            backgroundColor: barGraphColors,
+            data: scholarYvalue,
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: "Data of Scholar",
         },
       },
     });
