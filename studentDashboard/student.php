@@ -55,7 +55,7 @@
               </svg>
               <a href="">Home</a>
             </li>
-            <li>
+            <!-- <li>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -68,7 +68,7 @@
               </svg>
 
               <a href="program.html">Program</a>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="logout">
@@ -298,6 +298,7 @@
                       name="gwa"
                       accept="image/png, image/jpeg"
                       placeholder="Profile"
+                      required
                     />
                   </div>
                   <div class="cor-field">
@@ -308,6 +309,7 @@
                       name="cor"
                       accept="image/png, image/jpeg"
                       placeholder="Profile"
+                      required
                     />
                   </div>
                 </div>
@@ -320,6 +322,7 @@
                       name="profilepic"
                       accept="image/png, image/jpeg"
                       placeholder="Profile"
+                      required
                     />
                   </div>
                   <div class="barangay-field">
@@ -330,6 +333,7 @@
                       name="brgycert"
                       accept="image/png, image/jpeg"
                       placeholder="Profile"
+                      required
                     />
                   </div>
                 </div>
@@ -342,6 +346,7 @@
                       name="signature"
                       accept="image/png, image/jpeg"
                       placeholder="Profile"
+                      required
                     />
                   </div>
                   <div class="id-field-container">
@@ -352,6 +357,7 @@
                       name="idcard"
                       accept="image/png, image/jpeg"
                       placeholder="Profile"
+                      required
                     />
                   </div>
                 </div>

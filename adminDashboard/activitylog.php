@@ -177,7 +177,7 @@
             </svg>
             <a href="activitylog.php">Progress</a>
           </li>
-          <li>
+          <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -196,7 +196,7 @@
               />
             </svg>
             <a href="reports.php">Reports</a>
-          </li>
+          </li> -->
           <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +306,7 @@
                     />
                   </svg>
                 </button> -->
-                <button>
+                <button class="exportScholar">
                   <span>Export</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -542,9 +542,11 @@ function closeModal(){
                                             if (typeof resp != undefined) {
                                                 resp = JSON.parse(resp);
                                                 if (resp.status == 1) {
-                                                    Swal.fire('Success!', resp.msg, 'success').then(() => { // FIX THIS ALERT!!!
-                                                        location.reload();
-                                                    });
+                                                    // Swal.fire('Success!', resp.msg, 'success').then(() => { // FIX THIS ALERT!!!
+                                                    //     location.reload();
+                                                    // });
+                                                    alert(resp.msg)
+                                                    window.location.reload();
                                                 }
                                             }
                                         }
@@ -571,12 +573,33 @@ function closeModal(){
 					if (searchText == "") return;
 					// If the search key is not empty, make the AJAX request
             $.post('../actions/search_activitylog.php', { key: searchText },
-                function(data, status) {
+                function(data, status) {        
                     console.log(data);
                     $("#act-tbl").html(data);
                 }
             );
 				});
+        $(document).on('click', '.exportScholar', function () {
+
+        // Send AJAX request to generateCOE.php with the ID parameter
+        $.ajax({
+          url: '../actions/exportActivitylog.php',
+          type: 'GET',
+          xhrFields: {
+            responseType: 'blob',
+          },
+          success: function (response) {
+            // Create URL for the PDF blob
+            var url = window.URL.createObjectURL(response);
+
+            // Open the PDF in a new tab
+            window.open(url,);
+          },
+          error: function (xhr, status, error) {
+            console.log(xhr.responseText);
+          },
+        });
+        });
     });
   </script>
 </html>

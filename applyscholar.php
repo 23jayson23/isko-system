@@ -162,12 +162,12 @@
           </p>
           <div class="LRN-information">
             <p>ID / School / LRN Number</p>
-            <input type="text" placeholder="102072893621" accept="Number" name="lrn" />
+            <input type="text" placeholder="102072893621" accept="Number" name="lrn" required/>
           </div>
           <div class="FML-information">
             <div>
               <p>First Name</p>
-              <input type="text" placeholder="Juan" name="fname" />
+              <input type="text" placeholder="Juan" name="fname" required/>
             </div>
             <div>
               <p>Middle Name</p>
@@ -175,29 +175,29 @@
             </div>
             <div>
               <p>Last Name</p>
-              <input type="text" placeholder="Dela Cruz" name="lname" />
+              <input type="text" placeholder="Dela Cruz" name="lname" required/>
             </div>
           </div>
           <!-- address -->
           <div class="ADDRESS-information">
             <div>
               <p>Province</p>
-              <input type="text" placeholder="Bulacan" name="province" />
+              <input type="text" placeholder="Bulacan" name="province" required/>
             </div>
             <div>
               <p>Municipality</p>
-              <input type="text" placeholder="Malolos" name="municipality" />
+              <input type="text" placeholder="Malolos" name="municipality" required/>
             </div>
             <div>
               <p>Barangay</p>
-              <input type="text" placeholder="PinagBiyakan" name="barangay" />
+              <input type="text" placeholder="PinagBiyakan" name="barangay" required/>
             </div>
           </div>
           <!-- email and password -->
           <div class="EP-information">
             <div>
               <p>Email</p>
-              <input type="text" placeholder="JuanDelaCruz@gmail.com" name="email" />
+              <input type="text" placeholder="JuanDelaCruz@gmail.com" name="email" required/>
             </div>
             <div>
               <p>Phone Number</p>
@@ -205,7 +205,8 @@
                 type="text"
                 placeholder="0924-490-9999"
                 style="margin-top: 5px"
-                name="phone" 
+                name="phone"
+                required
               />
             </div>
           </div>
@@ -220,6 +221,7 @@
                   id="radio1"
                   type="radio"
                   value="Male"
+                  required
                 />
                 <label class="radio-label" for="radio1">
                   <span class="radio-inner-circle"></span>
@@ -231,6 +233,7 @@
                   id="radio2"
                   type="radio"
                   value="Female"
+                  required
                 />
                 <label class="radio-label" for="radio2">
                   <span class="radio-inner-circle"></span>

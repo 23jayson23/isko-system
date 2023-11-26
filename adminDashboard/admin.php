@@ -134,7 +134,7 @@
             </svg>
             <a href="activitylog.php">Process</a>
           </li>
-          <li>
+          <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -153,7 +153,7 @@
               />
             </svg>
             <a href="reports.php">Reports</a>
-          </li>
+          </li> -->
           <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -563,175 +563,16 @@
           <div class="graph-container" data-aos="fade-left"
             data-aos-duration="3000">
             <div class="graph-one">
-              <div id="my-chart">
-                <table
-                  class="charts-css column hide-data show-labels datasets-spacing-3 show-8-secondary-axes">
-                  <thead>
-                    <tr>
-                      <th scope="col">Month</th>
-                      <th scope="col">Progress</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">Jan</th>
-                      <td style="--size: calc(20 / 100)">
-                        <span class="data"> 30 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Feb</th>
-                      <td style="--size: 0.5">
-                        <span class="data" style="color: #fff"> 50 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Mar</th>
-                      <td style="--size: 0.8">
-                        <span class="data"> 80 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Apr</th>
-                      <td style="--size: 1"><span class="data"> 100 </span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">May</th>
-                      <td style="--size: 0.65">
-                        <span class="data"> 65 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Jun</th>
-                      <td style="--size: 0.45">
-                        <span class="data"> 45 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Jul</th>
-                      <td style="--size: 0.15">
-                        <span class="data"> 15 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Aug</th>
-                      <td style="--size: 0.32">
-                        <span class="data"> 32 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Sep</th>
-                      <td style="--size: 0.6">
-                        <span class="data"> 60 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Oct</th>
-                      <td style="--size: 0.9">
-                        <span class="data"> 90 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Nov</th>
-                      <td style="--size: 0.55">
-                        <span class="data"> 55 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Dec</th>
-                      <td style="--size: 0.4">
-                        <span class="data"> 40 </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div style="text-align: center; width: 100%; margin-top: 10px;">
-                  <label>Data of Scholars</label>
-                </div>
-              </div>
+              <canvas
+                id="GraphApplication"
+                style="width: 100%; max-width: 600px"
+              ></canvas>
             </div>
             <div class="graph-two">
-              <div id="my-chart">
-                <table
-                  class="charts-css column hide-data show-labels data-spacing-3 show-data-axes show-4-secondary-axes"
-                >
-                  <tbody>
-                    <tr>
-                      <th scope="row ">Jan</th>
-                      <td style="--size: calc(20 / 100)">
-                        <span class="data"> 30 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Feb</th>
-                      <td style="--size: 0.5">
-                        <span class="data" style="color: #fff"> 50 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Mar</th>
-                      <td style="--size: 0.8">
-                        <span class="data"> 80 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Apr</th>
-                      <td style="--size: 1"><span class="data"> 100 </span></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">May</th>
-                      <td style="--size: 0.65">
-                        <span class="data"> 65 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Jun</th>
-                      <td style="--size: 0.45">
-                        <span class="data"> 45 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Jul</th>
-                      <td style="--size: 0.15">
-                        <span class="data"> 15 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Aug</th>
-                      <td style="--size: 0.32">
-                        <span class="data"> 32 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Sep</th>
-                      <td style="--size: 0.6">
-                        <span class="data"> 60 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Oct</th>
-                      <td style="--size: 0.9">
-                        <span class="data"> 90 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Nov</th>
-                      <td style="--size: 0.55">
-                        <span class="data"> 55 </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Dec</th>
-                      <td style="--size: 0.4">
-                        <span class="data"> 40 </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div style="text-align: center; width: 100%; margin-top: 10px;">
-                  <label >Data of Applications</label>
-                </div>
-              </div>
+              <canvas
+                id="GraphScholar"
+                style="width: 100%; max-width: 600px"
+              ></canvas>
             </div>
           </div>
         </div>
@@ -803,6 +644,178 @@
         console.log("Error:", error);
       },
     });
+    $.ajax({
+      url: "../actions/get_scholar_by_date.php",
+      type: "GET",
+      dataType: "json",
+      success: function (data) {
+        console.log(data);
+
+        var pending_counts = data.pending_counts;
+
+        const allMonths = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "Septemeber",
+          "October",
+          "November",
+          "December",
+        ];
+
+        const ybarValues = [];
+        const xbarValues = [];
+
+        allMonths.forEach((month) => {
+          xbarValues.push(month);
+          ybarValues.push(pending_counts[month] ? pending_counts[month] : 0);
+        });
+
+        //bar graph for application
+    // const xbarValues = [
+    //   "January",
+    //   "February",
+    //   "March",
+    //   "April",
+    //   "May",
+    //   "June",
+    //   "July",
+    //   "August",
+    //   "September",
+    //   "October",
+    //   "November",
+    //   "December",
+    // ];
+        const barGraphColors = [
+          "#FF8080",
+          "#B5CB99",
+          "#FCE09B",
+          "#B2533E",
+          "#FF8080",
+          "#FFCF96",
+          "#F6FDC3",
+          "#CDFAD5",
+          "#D2E0FB",
+          "#F9F3CC",
+          "#8EACCD",
+          "#419197",
+        ];
+
+        new Chart("GraphApplication", {
+          type: "bar",
+          data: {
+            labels: xbarValues,
+            datasets: [
+              {
+                backgroundColor: barGraphColors,
+                data: ybarValues,
+              },
+            ],
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: "Pending Applications per Month",
+            },
+          },
+        });
+          },
+        error: function (error) {
+          console.log("Error:", error);
+        },
+      });
+      $.ajax({
+      url: "../actions/get_scholar_by_date.php",
+      type: "GET",
+      dataType: "json",
+      success: function (data) {
+        console.log(data);
+
+        var other_counts = data.other_counts;
+
+        const allMonths = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "Septemeber",
+          "October",
+          "November",
+          "December",
+        ];
+
+        const scholarYvalue = [];
+        const xbarValues = [];
+
+        allMonths.forEach((month) => {
+          xbarValues.push(month);
+          scholarYvalue.push(other_counts[month] ? other_counts[month] : 0);
+        });
+
+        //bar graph for application
+    // const xbarValues = [
+    //   "January",
+    //   "February",
+    //   "March",
+    //   "April",
+    //   "May",
+    //   "June",
+    //   "July",
+    //   "August",
+    //   "September",
+    //   "October",
+    //   "November",
+    //   "December",
+    // ];
+        const barGraphColors = [
+          "#FF8080",
+          "#B5CB99",
+          "#FCE09B",
+          "#B2533E",
+          "#FF8080",
+          "#FFCF96",
+          "#F6FDC3",
+          "#CDFAD5",
+          "#D2E0FB",
+          "#F9F3CC",
+          "#8EACCD",
+          "#419197",
+        ];
+
+        new Chart("GraphScholar", {
+          type: "bar",
+          data: {
+            labels: xbarValues,
+            datasets: [
+              {
+                backgroundColor: barGraphColors,
+                data: scholarYvalue,
+              },
+            ],
+          },
+          options: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: "Total of Scholars per Month",
+            },
+          },
+        });
+          },
+        error: function (error) {
+          console.log("Error:", error);
+        },
+      });
     
   </script>
   <script src="../js/sweetalert2.all.min.js"></script>

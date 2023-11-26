@@ -141,7 +141,7 @@
           </svg>
           <a href="activitylog.php">Progress</a>
         </li>
-        <li>
+        <!-- <li>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
             <path fill-rule="evenodd"
               d="M15.988 3.012A2.25 2.25 0 0118 5.25v6.5A2.25 2.25 0 0115.75 14H13.5V7A2.5 2.5 0 0011 4.5H8.128a2.252 2.252 0 011.884-1.488A2.25 2.25 0 0112.25 1h1.5a2.25 2.25 0 012.238 2.012zM11.5 3.25a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v.25h-3v-.25z"
@@ -151,7 +151,7 @@
               clip-rule="evenodd" />
           </svg>
           <a href="reports.php">Reports</a>
-        </li>
+        </li> -->
         <!-- <li>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
             <path
@@ -219,7 +219,7 @@
                     d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
                 </svg>
               </button> -->
-              <button>
+              <button class="exportScholar">
                 <span>Export</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
                   <path
@@ -513,6 +513,27 @@
                 }
             );
 				});
+        $(document).on('click', '.exportScholar', function () {
+
+			// Send AJAX request to generateCOE.php with the ID parameter
+			$.ajax({
+				url: '../actions/exportScholar.php',
+				type: 'GET',
+				xhrFields: {
+					responseType: 'blob',
+				},
+				success: function (response) {
+					// Create URL for the PDF blob
+					var url = window.URL.createObjectURL(response);
+
+					// Open the PDF in a new tab
+					window.open(url,);
+				},
+				error: function (xhr, status, error) {
+					console.log(xhr.responseText);
+				},
+			});
+		});
         // $("#search").on("input", function() {
 				// 	var searchText = $(this).val();
 				// 	if (searchText == "") return;
