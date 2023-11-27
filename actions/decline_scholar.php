@@ -22,12 +22,12 @@
 
 			$mail->Host = 'smtp.gmail.com'; // Gmail SMTP server
 			$mail->SMTPAuth = true;
-			$mail->Username = 'bonifacio.malunesjr.xentra@gmail.com'; //your email
-			$mail->Password = 'grpf ihiz wees fjjt'; //app password
+			$mail->Username = ''; //your email
+			$mail->Password = ''; //app password
 			$mail->SMTPSecure = 'tls'; // TLS encryption
 			$mail->Port = 587; // TCP port to connect to
 
-			$mail->setFrom('bonifacio.malunesjr.xentra@gmail.com', 'TESDA_ScholarshipSystem'); // Set your email address and name
+			$mail->setFrom('', 'TESDA_ScholarshipSystem'); // Set your email address and name
 			$mail->addAddress($userEmail); // Add recipient email address
 
 			$mail->Subject = 'TESDA - Scholarship Update';
