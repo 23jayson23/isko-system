@@ -155,17 +155,21 @@
             <a href="reports.php">Reports</a>
           </li> -->
           <li>
-            <svg
+          <svg
               xmlns="http://www.w3.org/2000/svg"
+              fill="none"
               viewBox="0 0 24 24"
-              fill="currentColor"
+              stroke-width="1.5"
+              stroke="currentColor"
               class="w-6 h-6"
             >
               <path
-                d="M16.881 4.346A23.112 23.112 0 018.25 6H7.5a5.25 5.25 0 00-.88 10.427 21.593 21.593 0 001.378 3.94c.464 1.004 1.674 1.32 2.582.796l.657-.379c.88-.508 1.165-1.592.772-2.468a17.116 17.116 0 01-.628-1.607c1.918.258 3.76.75 5.5 1.446A21.727 21.727 0 0018 11.25c0-2.413-.393-4.735-1.119-6.904zM18.26 3.74a23.22 23.22 0 011.24 7.51 23.22 23.22 0 01-1.24 7.51c-.055.161-.111.322-.17.482a.75.75 0 101.409.516 24.555 24.555 0 001.415-6.43 2.992 2.992 0 00.836-2.078c0-.806-.319-1.54-.836-2.078a24.65 24.65 0 00-1.415-6.43.75.75 0 10-1.409.516c.059.16.116.321.17.483z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
               />
             </svg>
-            <a href="">Announcement</a>
+            <a href="generate.html">Generate</a>
           </li>
         </ul>
         <ul>
@@ -279,26 +283,38 @@
           </div>
         </div>
         <!-- data ang graph -->
-        <div class="data-graph-container">
-          <div class="graph-container" data-aos="fade-left"
+        <div class="data-graph-container"data-aos="fade-up"
             data-aos-duration="3000">
+          <div class="graph-container">
             <div class="graph-one">
               <canvas
                 id="GraphApplication"
                 style="width: 100%; max-width: 600px"
               ></canvas>
+              <div style="text-align:center; padding:10px; font-size:12px;">
+                <p>In this graph, a visual representation unfolds, portraying the fluctuating data concerning scholars in a pending status, organized by the month of their respective applications. The graphic encapsulates the dynamic nature of scholarly pursuits, illustrating the ebb and flow of pending scholars over time, offering a comprehensive view of the patterns and trends within the academic landscape.
+                </p>
+              </div>
             </div>
             <div class="graph-two">
               <canvas
                 id="GraphScholar"
                 style="width: 100%; max-width: 600px"
               ></canvas>
+              <div style="text-align:center; padding:10px; font-size:12px;">
+                <p>In this graph, a comprehensive depiction unfolds, presenting data on the total number of scholars categorized by each month. This visual representation captures the evolving landscape of scholarly participation over time, offering insights into the monthly variations in the overall scholar count. The graph serves as a valuable tool for observing patterns, trends, and potential fluctuations in academic engagement, thereby providing a nuanced understanding of the collective scholarly activity across different months.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="pie-graph-container">
-          <div class="pie-child" data-aos="fade-up" data-aos-duration="3000">
+        <div class="pie-graph-container"data-aos="fade-up"
+            data-aos-duration="3000">
+          <div class="pie-child">
             <canvas id="myChart" style="width: 100%; max-width: 900px"></canvas>
+            <div style="text-align:center; padding:10px; font-size:12px;">
+            <p>In this graph, a detailed representation unfolds, illustrating the data pertaining to the total number of course applications. The visual presentation serves as a comprehensive snapshot, offering insights into the overall engagement with courses over a specified period. By showcasing the aggregate number of applications, the graph allows for a clear observation of trends, peaks, and troughs, enabling a nuanced analysis of the ebb and flow of interest or demand in the courses under consideration. This graphical depiction is instrumental in providing a holistic understanding of the dynamics surrounding course applications.</p>
+          </div>
           </div>
         </div>
       </div>
