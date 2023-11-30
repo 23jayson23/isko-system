@@ -177,7 +177,7 @@
             </svg>
             <a href="activitylog.php">Progress</a>
           </li>
-          <!-- <li>
+          <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -195,8 +195,8 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <a href="reports.php">Reports</a>
-          </li> -->
+            <a href="decline.html">Decline</a>
+          </li>
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
