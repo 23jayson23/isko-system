@@ -116,19 +116,18 @@ body {
   font-weight: 800;
   color: #164863;
 }
-.side-panel{
-  
-.active {
-  background: #efefef;
+.side-panel {
+  .active {
+    background: #efefef;
+  }
+  .active a {
+    color: #fbaf03;
+  }
+  .active svg {
+    color: #fbaf03;
+  }
 }
-.active a {
-  color: #fbaf03;
-}
-.active svg {
-  color: #fbaf03;
-}
-}
-.logout{
+.logout {
   width: 100%;
 }
 
@@ -187,138 +186,185 @@ body {
   height: 20px;
   padding: 10px;
 }
-.student-background{
+.student-background {
   width: 97%;
   height: 400px;
   padding: 30px;
 }
 .modal-main {
-    transition: ease-in-out 0.5s;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    z-index: 10000;
-    position: absolute;
-  }
-  .modal-container {
-    background-color: #F8F9FF;
-    border-radius: 20px;
-    width: 30%;
-    padding: 20px;
-    transition: ease-in-out 0.5s;
-    animation-name: slideIn;
-    animation-duration: 0.4s
-  }
-  .main-modal{
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-  }
-  .modal-title{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-  }
-  .modal-title button{
-    background: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-  }
-  .modal-title button svg{
-    width: 35px;
-    height: 35px;
-  }
-  .wallet-balance{
-    width: auto;
-    position: relative;
-    padding: 20px;
-    text-align: center;
-  }
-  .wallet{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap:10px;
-    align-items: center;
-  }
-  .wallet span{
-    font-size: 50px;
-    font-weight: 800;
-    color: #164863;
-  }
-  .modal-btn-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap:20px;
-  }
-  .modal-btn-container button{
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    background: none;
-    outline:none;
-    color: #fff;
-    letter-spacing: 2px;
-    font-weight: 800;
-    border: none;
-  }
-  .modal-btn-container button:nth-child(1){
-    background: #BE3144;
-  }
-  .modal-btn-container button:nth-child(2){
-    background: #9ADE7B;
-  }
-  .program{
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 100%;
-    padding: 30px;
-    overflow: auto;
-    gap: 20px 20px;
-  }
-  .prog-container{
-    width: auto;
-    height: 450px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: #ffffff;
-    border-radius: 10px;
-  }
-  .prog-container .prog-image{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .prog-container img{
-    width: 100px;
-    height: 100px;
-  }
-  .prog-title{
-    padding: 20px;
-    width: auto;
-    text-align: center;
-  }
-  .prog-title strong{
-    margin-top: 10px;
-    width: 100%;
-    font-size: 20px;
-    text-align: center;
-    font-weight: 800;
-    color: #164863;
-  }
-  .prog-title p{
-    margin-top: 10px;
-    width: 100%;
-    font-size: 15px;
-  }
+  transition: ease-in-out 0.5s;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  position: absolute;
+}
+.modal-container {
+  background-color: #f8f9ff;
+  border-radius: 20px;
+  width: 30%;
+  padding: 20px;
+  transition: ease-in-out 0.5s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+.main-modal {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.modal-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+.modal-title button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.modal-title button svg {
+  width: 35px;
+  height: 35px;
+}
+.wallet-balance {
+  width: auto;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+.wallet {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+.wallet span {
+  font-size: 50px;
+  font-weight: 800;
+  color: #164863;
+}
+.modal-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.modal-btn-container button {
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background: none;
+  outline: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 800;
+  border: none;
+}
+.modal-btn-container button:nth-child(1) {
+  background: #be3144;
+}
+.modal-btn-container button:nth-child(2) {
+  background: #9ade7b;
+}
+.program {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+  height: 100%;
+  padding: 30px;
+  overflow: auto;
+  gap: 20px 20px;
+}
+.prog-container {
+  width: auto;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 10px;
+}
+.prog-container .prog-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.prog-container img {
+  width: 100px;
+  height: 100px;
+}
+.prog-title {
+  padding: 20px;
+  width: auto;
+  text-align: center;
+}
+.prog-title strong {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 800;
+  color: #164863;
+}
+.prog-title p {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 15px;
+}
+.btn {
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  background: #164863;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+}
+.btn:hover {
+  background: #fbaf03;
+}
+
+.modal-main {
+  transition: ease-in-out 0.5s;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  position: absolute;
+}
+.modal-container {
+  background-color: #F8F9FF;
+  border-radius: 20px;
+  width: 30%;
+  padding: 20px;
+  transition: ease-in-out 0.5s;
+  height: auto;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+.main-modal{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.main-modal p{
+  padding: 20px;
+  text-align: justify;
+}
