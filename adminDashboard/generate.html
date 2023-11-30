@@ -37,7 +37,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <a href="admin.html">Dashboard</a>
+            <a href="admin.php">Dashboard</a>
           </li>
           <li>
             <svg
@@ -52,7 +52,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <a href="scholar.html">Application</a>
+            <a href="scholar.php">Application</a>
           </li>
           <li>
             <svg
@@ -65,27 +65,7 @@
                 d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z"
               />
             </svg>
-            <a href="activitylog.html">Progress</a>
-          </li>
-          <li>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="w-5 h-5"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M15.988 3.012A2.25 2.25 0 0118 5.25v6.5A2.25 2.25 0 0115.75 14H13.5V7A2.5 2.5 0 0011 4.5H8.128a2.252 2.252 0 011.884-1.488A2.25 2.25 0 0112.25 1h1.5a2.25 2.25 0 012.238 2.012zM11.5 3.25a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v.25h-3v-.25z"
-                clip-rule="evenodd"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M2 7a1 1 0 011-1h8a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V7zm2 3.25a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75zm0 3.5a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <a href="reports.html">Reports</a>
+            <a href="activitylog.php">Progress</a>
           </li>
           <li class="active">
             <svg
@@ -106,7 +86,7 @@
           </li>
         </ul>
         <ul>
-          <li>
+          <!-- <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -120,7 +100,7 @@
               />
             </svg>
             <a href="">Settings</a>
-          </li>
+          </li> -->
           <li>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +149,40 @@
             </div>
           </div>
         </div>
+        <div class="output-details" data-aos="fade-up" data-aos-duration="3000">
+          <div class="announcement">
+            <div class="announcement-container">
+              <div class="image-container">
+                <P><img src="../assets/image/AO.png" style="width: 130px;">Announcement</P>
+              </div>
+              <div class="announcement-container-info">
+                <input class="input" type="text" placeholder="Title">
+                <textarea height="300px" width="100%" placeholder="Description" class="description"></textarea>
+                <button class="btn">
+                  Post
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="course">
+            <div class="course-container">
+              <div class="image-container">
+                <P><img src="../assets/image/CO.png" style="width: 130px;">Course information</P>
+              </div>
+              <div class="course-container-info">
+                <input class="input" type="text" placeholder="Title">
+                <textarea height="300px" width="100%" placeholder="Description" class="description"></textarea>
+                <button class="btn">
+                  Post
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
+  <script>
+    AOS.init();
+  </script>
 </html>
