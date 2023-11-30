@@ -54,4 +54,12 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
     });
 });
 
-  
+
+var submit = document.getElementById("submitted")
+var process = document.getElementById("process")
+var approved = document.getElementById("approved")
+
+function activate(){
+    process.classList.add("active-process")
+    console.log(submit)
+}
