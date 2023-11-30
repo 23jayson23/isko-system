@@ -60,6 +60,8 @@ var process = document.getElementById("process")
 var approved = document.getElementById("approved")
 
 function activate(){
-    process.classList.add("active-process")
-    console.log(submit)
+    if(true){
+        process.classList.add("active-process")
+    }
 }
+activate().init()
