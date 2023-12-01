@@ -14,6 +14,7 @@
     if ($approve && $approveReqs) {
         // Send email to the user
         $userEmail = getUserEmail($conn, $getid);
+        $fullname = getName($conn, $getid);
 
         if ($userEmail) {
             $mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -24,15 +25,15 @@
             $mail->Host = 'smtp.gmail.com'; // Gmail SMTP server
 			$mail->SMTPAuth = true;
 			$mail->Username = ''; // Your Gmail address
-			$mail->Password = ''; // Your app password
+			$mail->Password = 'cmwl bswd dvlg iaom'; // Your app password
 			$mail->SMTPSecure = 'tls'; // TLS encryption
 			$mail->Port = 587; // Port for TLS (587) or SSL (465)
 
             $mail->setFrom('', 'TESDA_ScholarshipSystem'); // Set your email address and name
             $mail->addAddress($userEmail); // Add recipient email address
 
-            $mail->Subject = 'TESDA - Scholarship Update';
-            $mail->Body = 'Dear User, Your scholar application has been approved. Congratulations!';
+            $mail->Subject = 'Congratulations on Your Scholarship Acceptance - TESDA Guiguinto';
+            $mail->Body = "Application Update\n\nDear $fullname,\n\nWe hope this message finds you well. We are delighted to inform you that your application for the TESDA Guiguinto scholarship program has been successful.\n\nCongratulations! Your commitment, achievements, and aspirations have stood out among the applicants, and we are excited to welcome you to our program.\n\nIf you have any questions or need further information, please do not hesitate to contact us at contactcenter@tesda.gov.ph. We are happy to help you with any questions you may have.\n\nVisit our Website at https://www.tesda.gov.ph";
 
             if (!$mail->send()) {
                 echo json_encode(array("status" => 0, 'msg' => "Email could not be sent. Mailer Error: " . $mail->ErrorInfo));
@@ -52,6 +53,14 @@
         if ($result && $result->num_rows > 0) {
             $row = $result->fetch_assoc();
             return $row['email'];
+        }
+        return null;
+    }
+    function getName($conn, $userId) {
+        $result = $conn->query("SELECT fname, lname FROM `scholar` WHERE `user_id` = '".$userId."'");
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row['fname'] . ' ' . $row['lname'];
         }
         return null;
     }

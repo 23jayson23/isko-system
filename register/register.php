@@ -105,6 +105,7 @@
 					url: '../actions/signup.php',
 					method: 'POST',
 					data: $(this).serialize(),
+          dataType: 'json',
 					error: (err) => {
 						console.log(err);
 						Swal.fire({
@@ -113,23 +114,23 @@
 						});
 					},
 					success: function (resp) {
-						if (resp == true) {
+						if (resp.success) {
 							$('[name="username"]').val('');
 							$('[name="password"]').val('');
                             $('[name="retypepassword"]').val('');
 							Swal.fire({
 								icon: 'success',
-								title: 'Create Account Successful!',
+								title: resp.message,
 								showConfirmButton: false,
 								timer: 1500,
 							}).then(() => {
 								location.replace('../applyscholar.php');
 							});
 						} else {
-                            console.log(resp);
+                            console.log(resp.message);
 							Swal.fire({
 								icon: 'error',
-								title: 'Invalid credentials',
+								title: resp.message,
 							});
 						}
 					},

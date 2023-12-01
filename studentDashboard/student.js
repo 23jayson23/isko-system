@@ -54,14 +54,26 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
     });
 });
 
+$(document).ready(function(){
+    $.ajax({
+        url: '../actions/get_scholar_reqs.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            console.log(data)
+            var submit = document.getElementById("submitted")
+            var process = document.getElementById("process")
+            var approved = document.getElementById("approved")
 
-var submit = document.getElementById("submitted")
-var process = document.getElementById("process")
-var approved = document.getElementById("approved")
-
-function activate(){
-    if(true){
-        process.classList.add("active-process")
-    }
-}
-activate().init()
+            function activate(){
+                if(data.submitted){
+                    process.classList.add("active-process") // DI PA TAPOS
+                }
+            }
+            activate()
+        },
+        error: function(error) {
+            console.log('Error:', error);
+        }
+    });
+});

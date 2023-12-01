@@ -179,18 +179,21 @@
             </div>
           </div>
           <!-- address -->
-          <div class="ADDRESS-information">
+          <div class="ADDRESS-information SP-information">
             <div>
-              <p>Province</p>
-              <input type="text" placeholder="Bulacan" name="province" required/>
+              <label>Province  </label>
+              <select name="province" id="province">
+              </select>
             </div>
             <div>
-              <p>Municipality</p>
-              <input type="text" placeholder="Malolos" name="municipality" required/>
+              <label>Municipality</label>
+              <select name="municipality" id="municipality">
+              </select>
             </div>
             <div>
-              <p>Barangay</p>
-              <input type="text" placeholder="PinagBiyakan" name="barangay" required/>
+              <label>Barangay</label>
+              <select name="barangay" id="barangay">
+              </select>
             </div>
           </div>
           <!-- email and password -->
@@ -309,16 +312,23 @@
     </main>
   </body>
   <script src="js/sweetalert2.all.min.js"></script>
+  <script src="js/jquery.ph-locations-v1.0.0.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
 			$('#scholar-frm').submit(function (e) {
 				e.preventDefault();
 				var form = $(this);
 
+        var formData = form.serializeArray();
+
+        formData.push({name: 'province', value: $('#province option:selected').text()});
+        formData.push({name: 'municipality', value: $('#municipality option:selected').text()});
+        formData.push({name: 'barangay', value: $('#barangay option:selected').text()});
+
 				$.ajax({
 					url: 'actions/add_scholar.php',
 					method: 'POST',
-					data: $(this).serialize(),
+					data: formData,
 					error: (err) => {
 						console.log(err);
 						Swal.fire({
@@ -348,5 +358,34 @@
 				});
 			});
 		});
+  </script>
+    <script>
+    var my_handlers = {
+    fill_cities: function () {
+        var province_code = '0314'; // Set the desired province code
+        $('#municipality').ph_locations('fetch_list', [{ "province_code": province_code }]);
+    },
+
+    fill_barangays: function () {
+        var city_code = $('#municipality').val();
+        $('#barangay').ph_locations('fetch_list', [{ "city_code": city_code }]);
+    }
+};
+
+$(function () {
+    $('#province').append('<option value="Bulacan">Bulacan</option>'); // Add the desired province directly
+
+    $('#province').on('change', my_handlers.fill_cities);
+    $('#municipality').on('change', my_handlers.fill_barangays);
+
+    // Initialize and fetch data for #province directly
+    $('#province').ph_locations({'location_type': 'provinces'});
+    $('#municipality').ph_locations({'location_type': 'cities'});
+    $('#barangay').ph_locations({'location_type': 'barangays'});
+    my_handlers.fill_cities(); // Triggering the cities data fetch for the default province
+});
+
+
+
   </script>
 </html>

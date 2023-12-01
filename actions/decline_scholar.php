@@ -13,6 +13,7 @@
 	if($declined && $declinedReqs){
 		// Send email to the user
 		$userEmail = getUserEmail($conn, $getid);
+		$fullname = getName($conn, $getid);
 
 		if ($userEmail) {
 			$mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -30,8 +31,8 @@
 			$mail->setFrom('', 'TESDA_ScholarshipSystem'); // Set your email address and name
 			$mail->addAddress($userEmail); // Add recipient email address
 
-			$mail->Subject = 'TESDA - Scholarship Update';
-			$mail->Body = 'Dear User, Your scholar application has been declined.';
+			$mail->Subject = 'Scholarship Application Status - TESDA Guiguinto';
+			$mail->Body = "Application Update\n\nDear $fullname,\n\nWe hope this message finds you well. Thank you for applying to the scholarship program at TESDA Guiguinto. After reviewing, we regret to inform you that your application was not selected.\n\nWe appreciate the effort you invested in your application and encourage you to explore other educational opportunities. TESDA Guiguinto remains committed to supporting learners, and we hope you will consider applying for future programs.\n\nIf you have any questions or need further information, please do not hesitate to contact us at contactcenter@tesda.gov.ph. We are happy to help you with any questions you may have.\n\nVisit our Website at https://www.tesda.gov.ph";
 
 			if (!$mail->send()) {
 				echo json_encode(array("status" => 0, 'msg' => "Email could not be sent. Mailer Error: " . $mail->ErrorInfo));
@@ -50,6 +51,14 @@
         if ($result && $result->num_rows > 0) {
             $row = $result->fetch_assoc();
             return $row['email'];
+        }
+        return null;
+    }
+	function getName($conn, $userId) {
+        $result = $conn->query("SELECT fname, lname FROM `scholar` WHERE `user_id` = '".$userId."'");
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            return $row['fname'] . ' ' . $row['lname'];
         }
         return null;
     }

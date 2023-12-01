@@ -177,7 +177,7 @@
           <div class="progress-child">
             <div class="line"></div>
             <div class="circle-container">
-              <div class="circle active-process">
+              <div class="circle active-process" id="submitted">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -197,7 +197,7 @@
               <p>Submission Forms</p>
             </div>
             <div class="circle-container">
-              <div class="circle">
+              <div class="circle" id="process">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -212,7 +212,7 @@
               <p>Process by Admin</p>
             </div>
             <div class="circle-container">
-              <div class="circle">
+              <div class="circle" id="approve">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
