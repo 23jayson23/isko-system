@@ -368,3 +368,31 @@ body {
   padding: 20px;
   text-align: justify;
 }
+
+.pagination{
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pagination-container{
+  padding: 10px;
+}
+.pagination-container a{
+  text-decoration: none;
+  background-color: #efefef;
+  color: #164863;
+  font-weight: 600;
+  padding: 10px;
+}
+.pagination-container a:hover{
+  background-color: #fbaf03;
+  color: #fff;
+  transition: ease-in-out 0.5s;
+}
+.pagination .active{
+  color: white;
+  background-color: #164863;
+}
