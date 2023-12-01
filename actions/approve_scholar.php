@@ -25,7 +25,7 @@
             $mail->Host = 'smtp.gmail.com'; // Gmail SMTP server
 			$mail->SMTPAuth = true;
 			$mail->Username = ''; // Your Gmail address
-			$mail->Password = 'cmwl bswd dvlg iaom'; // Your app password
+			$mail->Password = ''; // Your app password
 			$mail->SMTPSecure = 'tls'; // TLS encryption
 			$mail->Port = 587; // Port for TLS (587) or SSL (465)
 
