@@ -63,14 +63,62 @@ $(document).ready(function(){
             console.log(data)
             var submit = document.getElementById("submitted")
             var process = document.getElementById("process")
-            var approved = document.getElementById("approved")
+            var approve = document.getElementById("approve")
 
-            function activate(){
-                if(data.submitted){
+            function activateProcess(){
                     process.classList.add("active-process") // DI PA TAPOS
-                }
             }
-            activate()
+            function activateApprove(){
+                approve.classList.add("active-process") // DI PA TAPOS
+        }
+            if (data.submitted == true){
+                activateProcess()
+            }
+        },
+        error: function(error) {
+            console.log('Error:', error);
+        }
+    });
+    $.ajax({
+        url: '../actions/get_scholar_reqs.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            console.log(data)
+            var submit = document.getElementById("submitted")
+            var process = document.getElementById("process")
+            var approve = document.getElementById("approve")
+
+            function activateProcess(){
+                    process.classList.add("active-process") // DI PA TAPOS
+            }
+            function activateApprove(){
+                approve.classList.add("active-process") // DI PA TAPOS
+        }
+            if (data.submitted == true){
+                activateProcess()
+            }
+        },
+        error: function(error) {
+            console.log('Error:', error);
+        }
+    });
+    $.ajax({
+        url: '../actions/get_approved_scholar.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            console.log(data)
+            var submit = document.getElementById("submitted")
+            var process = document.getElementById("process")
+            var approve = document.getElementById("approve")
+
+            function activateApprove(){
+                approve.classList.add("active-process") // DI PA TAPOS
+        }
+            if (data.approved == true){
+                activateApprove()
+            }
         },
         error: function(error) {
             console.log('Error:', error);

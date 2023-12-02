@@ -2,7 +2,9 @@
 
 extract($_POST);
 $data = array();
-$query = $conn->query("SELECT * FROM scholar WHERE user_id = $uid") or die(mysqli_error());
+$query = $conn->query("SELECT * 
+FROM program WHERE program.program_id = $program_id;
+") or die(mysqli_error());
 
 if ($query->num_rows > 0) {
     $data = $query->fetch_array();

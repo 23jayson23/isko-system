@@ -67,7 +67,7 @@
                 />
               </svg>
 
-              <a href="program.html">Program</a>
+              <a href="program.php">Program</a>
             </li>
           </ul>
         </div>

@@ -27,7 +27,7 @@
     <div class="modal-main" id="personalinfo">
       <div class="modal-container">
         <div class="main-modal">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          <p id="programDesc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           <button class="btn" onclick="closeModal() ">Close</button>
         </div>
       </div>
@@ -43,7 +43,7 @@
               class="profile-container-side"
               style="border-left: solid 3px #fbaf03"
             >
-              <span>Paulo Batungbakal</span>
+              <span id="studentName">Paulo Batungbakal</span>
               <p>Student</p>
             </div>
           </ul>
@@ -62,7 +62,7 @@
                   d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
                 />
               </svg>
-              <a href="student.html">Home</a>
+              <a href="student.php">Home</a>
             </li>
             <li class="active">
               <svg
@@ -76,13 +76,13 @@
                 />
               </svg>
 
-              <a href="program.html">Program</a>
+              <a href="program.php">Program</a>
             </li>
           </ul>
         </div>
         <div class="logout">
           <ul>
-            <li>
+            <!-- <li>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -96,7 +96,7 @@
                 />
               </svg>
               <a href="">Settings</a>
-            </li>
+            </li> -->
             <li>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +115,7 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <a href="">Log Out</a>
+              <a href="../actions/logout.php">Log Out</a>
             </li>
           </ul>
         </div>
@@ -143,80 +143,12 @@
             </div>
           </div>
         </div>
-        <div class="program" >
-          <div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn" onclick="viewInfo()">See More</button>
-          </div>
-          <div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn">See More</button>
-          </div><div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn">See More</button>
-          </div><div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn">See More</button>
-          </div><div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn">See More</button>
-          </div><div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn">See More</button>
-          </div><div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn">See More</button>
-          </div><div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn">See More</button>
-          </div><div class="prog-container">
-            <div class="prog-image">
-              <img src="../assets/image/prog-imge.png">
-            </div>
-            <div class="prog-title">
-              <strong>Universal Access to Quality Tertiary Education(UAQTEA)</strong>
-            </div>
-            <button class="btn">See More</button>
+        <div class="program" id="sharedContent">
+          <!-- content here -->
+        </div>
+        <div class="pagination">
+          <div class="pagination-container" id="pagination">
+            <!-- content here -->
           </div>
         </div>
       </div>
@@ -232,5 +164,71 @@
       modal_show.style.display = "none"
     }
     // AOS.init();
+    $(document).ready(function () {
+      $.ajax({
+        url: '../actions/get_scholar.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            var studentName = data.fname + ' ' + data.lname;
+            $('#studentName').text(studentName);
+        },
+        error: function(error) {
+            console.log('Error:', error);
+        }
+    });
+    $(document).on('click', '.view', function(){
+      var program_id = $(this).data('id');
+      $.ajax({
+        url: '../actions/get_program_by_id.php',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+          program_id: program_id
+        },
+        success: function(data) {
+          $('#programDesc').text(data.program_desc);
+        },
+        error: function(error) {
+          console.log('Error:', error);
+        }
+      });
+      viewInfo();
+    });
+      function loadSharedContent(page) {
+        $.ajax({
+            url: '../actions/load_program.php', // Updated script name
+            type: 'GET',
+            data: { page_no_shared: page },
+            success: function (data) {
+                $('#sharedContent').html(data);
+            }
+        });
+    }
+
+    // Function to load pagination links using AJAX
+    function loadPaginationLinks(page) {
+        $.ajax({
+            url: '../actions/load_program_pagination.php', // Updated script name
+            type: 'GET',
+            data: { page_no_shared: page, pagination: true },
+            success: function (data) {
+                $('#pagination').html(data);
+            }
+        });
+    }
+    $(document).ready(function () {
+        loadSharedContent(1); // Load initial content
+        loadPaginationLinks(1); // Load initial pagination links
+    });
+
+    // Handle pagination link clicks
+    $(document).on('click', '.pagination-container a', function (e) {
+        e.preventDefault();
+        var page = $(this).attr('href').split('=')[1];
+        loadSharedContent(page);
+        loadPaginationLinks(page);
+    });
+      });
   </script>
 </html>

@@ -20,7 +20,7 @@
             </div>
             <ul>
                 <li class="line "><a href="index.html">HOME</a></li>
-                <li class="line"><a href="announcement.html" class="active">ANNOUNCEMENT</a></li>
+                <li class="line"><a href="announcement.php" class="active">ANNOUNCEMENT</a></li>
                 <li class="line"><a href="program.html">PROGRAM OFFERED</a></li>
                 <li class="line"><a href="forum.php">FORUM</a></li>
                 <li class="line"><a href="register/register.php">APPLY SCHOLAR</a></li>
@@ -65,11 +65,11 @@
                     will be gracing us with their profound insights:
                     Forum 1: Mr. Johnny Sung, who will expound on the ILO Lifelong Learning Analytical Framework.
                 </p>
-                <!-- <div class="see-more-button">
+                <div class="see-more-button">
                     <button class="button type1">
                         <span class="btn-txt">See More</span>
                     </button>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>

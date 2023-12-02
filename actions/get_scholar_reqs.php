@@ -2,7 +2,7 @@
 
 $submitted = false;
 
-$query = $conn->query("SELECT * FROM scholar_reqs WHERE user_id = $uid AND req_status = 'P'") or die(mysqli_error());
+$query = $conn->query("SELECT * FROM scholar_reqs WHERE user_id = $uid") or die(mysqli_error());
 
 if ($query->num_rows > 0) {
     $submitted = true;

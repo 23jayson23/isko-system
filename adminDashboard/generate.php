@@ -134,7 +134,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <a href="#">Log Out</a>
+            <a href="../actions/logout.php">Log Out</a>
           </li>
         </ul>
       </div>
