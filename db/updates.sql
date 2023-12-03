@@ -1,2 +1,2 @@
-ALTER TABLE program
-ADD COLUMN program_desc TEXT AFTER program_name;
+ALTER TABLE scholar
+ADD COLUMN remarks VARCHAR(255) AFTER status;

@@ -189,7 +189,7 @@
                                 <td>".$row['email']."</td>
                                 <td>".$row['phone']."</td>
                                 <td>".$row['program_name']."</td>
-                                <td>".$status_display."</td>
+                                <td>".$row['remarks']."</td>
                             </tr>";
                                 }
                                 $conn->close();

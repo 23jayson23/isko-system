@@ -7,8 +7,9 @@
     require 'PHPMailer-master/src/SMTP.php';
 
 	$getid = $_GET['user_id'];
+	$reason = $_GET['reason'];
 		
-	$declined = $conn->query("UPDATE `scholar` SET status = 'D' WHERE `user_id` = '".$getid."'") or die(mysqli_error());
+	$declined = $conn->query("UPDATE `scholar` SET status = 'D', remarks = '$reason' WHERE `user_id` = '".$getid."'") or die(mysqli_error());
 	$declinedReqs = $conn->query("UPDATE `scholar_reqs` SET req_status = 'D' WHERE `user_id` = '".$getid."'") or die(mysqli_error());
 	if($declined && $declinedReqs){
 		// Send email to the user

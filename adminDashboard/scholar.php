@@ -420,18 +420,26 @@
 			});
         $(document).on('click', '.decline', function () {
 				var user_id = $(this).attr('data-id');
+        var declineReasons = {
+          'Did not meet the requirements': 'Did not meet the requirements',
+          'Already have a scholarship': 'Already have a scholarship',
+          'Others': 'Others',
+        };
 				Swal.fire({
-					title: 'Are you sure?',
-					text: "Do you want to decline this scholar?",
-					icon: 'info',
+					title: 'Select a reason for declining',
+					input: "select",
+					inputOptions: declineReasons,
+          inputPlaceholder: 'Select a reason',
 					showCancelButton: true,
 					confirmButtonColor: '#3085d6',
 					cancelButtonColor: '#d33',
 					confirmButtonText: 'Yes, decline it!',
-				}).then((result) => {
-					if (result.isConfirmed) {
-						$.ajax({
-							url: '../actions/decline_scholar.php?user_id=' + user_id,
+          preConfirm: (reason) => {
+            if (!reason) {
+              Swal.showValidationMessage(`Please select a reason`)
+            } else {
+              $.ajax({
+							url: '../actions/decline_scholar.php?user_id=' + user_id + '&reason=' + reason,
 							error: (err) => console.log(err),
 							success: function (resp) {
 								if (typeof resp != undefined) {
@@ -444,7 +452,8 @@
 								}
 							},
 						});
-					}
+            }
+          }
 				});
 			});
         $(document).on('click', '.view', function(){
