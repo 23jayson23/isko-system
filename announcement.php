@@ -65,11 +65,11 @@
                     will be gracing us with their profound insights:
                     Forum 1: Mr. Johnny Sung, who will expound on the ILO Lifelong Learning Analytical Framework.
                 </p>
-                <div class="see-more-button">
+                <!-- <div class="see-more-button">
                     <button class="button type1">
                         <span class="btn-txt">See More</span>
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

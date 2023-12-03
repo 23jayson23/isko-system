@@ -30,7 +30,7 @@
             </div>
             <ul>
                 <li class="line "><a href="index.html">HOME</a></li>
-                <li class="line"><a href="announcement.html">ANNOUNCEMENT</a></li>
+                <li class="line"><a href="announcement.php">ANNOUNCEMENT</a></li>
                 <li class="line"><a href="program.html">PROGRAM OFFERED</a></li>
                 <li class="line"><a href="forum.php" class="active">FORUM</a></li>
                 <li class="line"><a href="register/register.php">APPLY SCHOLAR</a></li>
