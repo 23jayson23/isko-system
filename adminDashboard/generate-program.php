@@ -207,8 +207,8 @@
                 <P><img src="../assets/image/CO.png" style="width: 130px;">Create Program</P>
               </div>
               <div class="course-container-info">
-                <input name="programTitle" class="input" type="text" placeholder="Title">
-                <textarea name="programDesc" height="300px" width="100%" placeholder="Description" class="description"></textarea>
+                <input name="programTitle" class="input" type="text" placeholder="Title" required>
+                <textarea name="programDesc" height="300px" width="100%" placeholder="Description" class="description" required></textarea>
                 <button type="submit" class="btn">
                   Post
                 </button>

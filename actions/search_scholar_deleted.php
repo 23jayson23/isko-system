@@ -14,7 +14,7 @@ $key = "%{$_POST['key']}%";
 $sql_count = "SELECT COUNT(*) As total_records FROM scholar 
               LEFT JOIN program ON scholar.program_id = program.program_id 
               LEFT JOIN scholar_reqs ON scholar.user_id = scholar_reqs.user_id 
-              WHERE scholar.status = 'D' AND scholar_reqs.user_id IS NOT NULL 
+              WHERE scholar.status = 'X' AND scholar_reqs.user_id IS NOT NULL 
               AND CONCAT(scholar.fname, ' ', scholar.lname) LIKE ?";
 $stmt_count = $conn->prepare($sql_count);
 $stmt_count->bind_param("s", $key);
@@ -27,7 +27,7 @@ $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $sql = "SELECT * FROM scholar 
         LEFT JOIN program ON scholar.program_id = program.program_id 
         LEFT JOIN scholar_reqs ON scholar.user_id = scholar_reqs.user_id 
-        WHERE scholar.status = 'D' AND scholar_reqs.user_id IS NOT NULL 
+        WHERE scholar.status = 'X' AND scholar_reqs.user_id IS NOT NULL 
         AND CONCAT(scholar.fname, ' ', scholar.lname) LIKE ? 
         ORDER BY scholar.update_date DESC LIMIT ?, ?";
 $stmt = $conn->prepare($sql);
@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
                                 <td><?=$row['email'];?></td>
                                 <td><?=$row['phone'];?></td>
                                 <td><?=$row['program_name'];?>"</td>
-                                <td><?=$$row['remarks'];;?></td>
+                                <td><?=$row['remarks'];?></td>
         </tr>
 <?php
     }

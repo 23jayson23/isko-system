@@ -208,7 +208,7 @@
                 d="M10.375 2.25a4.125 4.125 0 100 8.25 4.125 4.125 0 000-8.25zM10.375 12a7.125 7.125 0 00-7.124 7.247.75.75 0 00.363.63 13.067 13.067 0 006.761 1.873c2.472 0 4.786-.684 6.76-1.873a.75.75 0 00.364-.63l.001-.12v-.002A7.125 7.125 0 0010.375 12zM16 9.75a.75.75 0 000 1.5h6a.75.75 0 000-1.5h-6z"
               />
             </svg>
-            <a href="delete-account.html">Deleted Account</a>
+            <a href="delete-account.php">Deleted Account</a>
           </li>
           <li >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -488,18 +488,26 @@ function closeModal(){
     $(document).ready(function () {
       $(document).on('click', '.delete', function () {
 				var user_id = $(this).attr('data-id');
+        var deleteReasons = {
+          'Dead': 'Dead',
+          'Stopped': 'Stopped',
+          'Drop Out': 'Drop Out',
+        };
 				Swal.fire({
-					title: 'Are you sure?',
-					text: "Do you want to delete this scholar?",
-					icon: 'info',
+					title: 'Select a reason for deletion',
+					input: "select",
+					inputOptions: deleteReasons,
+          inputPlaceholder: 'Select a reason',
 					showCancelButton: true,
 					confirmButtonColor: '#3085d6',
 					cancelButtonColor: '#d33',
 					confirmButtonText: 'Yes, delete it!',
-				}).then((result) => {
-					if (result.isConfirmed) {
-						$.ajax({
-							url: '../actions/delete_scholar.php?user_id=' + user_id,
+          preConfirm: (reason) => {
+            if (!reason) {
+              Swal.showValidationMessage(`Please select a reason`)
+            } else {
+              $.ajax({
+							url: '../actions/delete_scholar.php?user_id=' + user_id + '&reason=' + reason,
 							error: (err) => console.log(err),
 							success: function (resp) {
 								if (typeof resp != undefined) {
@@ -512,7 +520,8 @@ function closeModal(){
 								}
 							},
 						});
-					}
+            }
+          }
 				});
 			});
       $(document).on('click', '.view', function(){

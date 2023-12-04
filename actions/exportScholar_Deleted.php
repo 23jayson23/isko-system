@@ -3,7 +3,7 @@
 require_once('../TCPDF-main/tcpdf.php');
 require ('db_connect.php');
 
-$get=$conn->query("SELECT * FROM `scholar` inner join `program` on program.program_id = scholar.program_id inner join `scholar_reqs` on scholar.user_id = scholar_reqs.user_id where scholar.status = 'D'") or die(mysqli_error());
+$get=$conn->query("SELECT * FROM `scholar` inner join `program` on program.program_id = scholar.program_id inner join `scholar_reqs` on scholar.user_id = scholar_reqs.user_id where scholar.status = 'X'") or die(mysqli_error());
 		
 		// if($get->num_rows > 0 ){
 		// 	$data = $get->fetch_array();
@@ -145,7 +145,7 @@ $pdf->writeHTMLCell(0, 0, '', 50, $html, 0, 1, 0, true, '', true);
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
 $current_month_year = date('FY'); // returns the current month and year in the format "MonthYYYY"
-$file_name = "TESDA_Exported_Data_Declined_{$current_month_year}.pdf";
+$file_name = "TESDA_Exported_Data_Deleted_{$current_month_year}.pdf";
 
 $pdf->Output($file_name, 'I');
 ?>

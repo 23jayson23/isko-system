@@ -165,7 +165,7 @@
                 d="M10.375 2.25a4.125 4.125 0 100 8.25 4.125 4.125 0 000-8.25zM10.375 12a7.125 7.125 0 00-7.124 7.247.75.75 0 00.363.63 13.067 13.067 0 006.761 1.873c2.472 0 4.786-.684 6.76-1.873a.75.75 0 00.364-.63l.001-.12v-.002A7.125 7.125 0 0010.375 12zM16 9.75a.75.75 0 000 1.5h6a.75.75 0 000-1.5h-6z"
               />
             </svg>
-            <a href="delete-account.html">Deleted Account</a>
+            <a href="delete-account.php">Deleted Account</a>
           </li>
           <li >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -307,7 +307,7 @@
             </div>
             <div>
               <strong id="deleted">9,999+</strong>
-              <a href="delete-account.html">Deleted</a>
+              <a href="delete-account.php">Deleted</a>
             </div>
           </div>
         </div>
@@ -316,12 +316,12 @@
             data-aos-duration="3000">
           <div class="graph-container">
             <div class="graph-one">
-              <div class="filter">
+              <!-- <div class="filter">
                 <select>
                   <option>By : Year</option>
                   <option>By : Month</option>
                 </select>
-              </div>
+              </div> -->
               <canvas
                 id="GraphApplication"
                 style="width: 100%; max-width: 600px"
@@ -332,12 +332,12 @@
               </div>
             </div>
             <div class="graph-two">
-              <div class="filter">
+              <!-- <div class="filter">
                 <select>
                   <option>By : Year</option>
                   <option>By : Month</option>
                 </select>
-              </div>
+              </div> -->
               <canvas
                 id="GraphScholar"
                 style="width: 100%; max-width: 600px"
@@ -364,6 +364,7 @@
   </body>
   <script>
     AOS.init();
+    //PIE
     const xValues = [
       "Universal Access to Quality Tertiary Education(UAQTEA)",
       "Training for Work Scholarship Program(TWSP)",
@@ -438,6 +439,7 @@
         console.log("Error:", error);
       },
     });
+    //BAR - PENDING APPLICATIONS
     $.ajax({
       url: "../actions/get_scholar_by_date.php",
       type: "GET",
@@ -469,21 +471,6 @@
           ybarValues.push(pending_counts[month] ? pending_counts[month] : 0);
         });
 
-        //bar graph for application
-    // const xbarValues = [
-    //   "January",
-    //   "February",
-    //   "March",
-    //   "April",
-    //   "May",
-    //   "June",
-    //   "July",
-    //   "August",
-    //   "September",
-    //   "October",
-    //   "November",
-    //   "December",
-    // ];
         const barGraphColors = [
           "#FF8080",
           "#B5CB99",
@@ -536,6 +523,7 @@
           console.log("Error:", error);
         },
       });
+    //BAR - SCHOLAR
       $.ajax({
       url: "../actions/get_scholar_by_date.php",
       type: "GET",
@@ -567,21 +555,6 @@
           scholarYvalue.push(other_counts[month] ? other_counts[month] : 0);
         });
 
-        //bar graph for application
-    // const xbarValues = [
-    //   "January",
-    //   "February",
-    //   "March",
-    //   "April",
-    //   "May",
-    //   "June",
-    //   "July",
-    //   "August",
-    //   "September",
-    //   "October",
-    //   "November",
-    //   "December",
-    // ];
         const barGraphColors = [
           "#FF8080",
           "#B5CB99",
@@ -648,10 +621,12 @@
             var pending = data.pending;
             var inactive = data.inactive;
             var declined = data.declined;
+            var deleted = data.deleted;
             $('#approved').text(approved);
             $('#pending').text(pending);
             $('#inactive').text(inactive);
             $('#declined').text(declined);
+            $('#deleted').text(deleted);
         },
         error: function(error) {
             console.log('Error:', error);
