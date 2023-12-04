@@ -236,7 +236,7 @@ ul li a {
 }
 
 .graph-container {
-  width: 90%;
+  width: 97%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -438,7 +438,7 @@ tbody tr td svg {
   padding: 10px 20px;
 }
 .pie-graph-container{
-  width: 100%;
+  width: 97%;
   padding: 0px 25px 25px 25px;
 }
 .pie-child{
@@ -446,7 +446,7 @@ tbody tr td svg {
   -webkit-box-shadow: 3px 3px 10px 3px #dddddd;
   -moz-box-shadow: 3px 3px 10px 3px #dddddd;
   box-shadow: 3px 3px 10px 3px #dddddd;
-  width: 86%;
+  width: 96%;
   height: 100%;
   border-radius:  10px;
   display: flex;
@@ -478,4 +478,18 @@ tbody tr td svg {
   background-color: none;
   height: 100%;
   margin: 0;
+}
+.filter{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  height: 20px;
+}
+.filter select{
+  width: 100px;
+  height: 30px;
+  background: #efefef;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }

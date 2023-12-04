@@ -306,6 +306,11 @@
             data-aos-duration="3000">
           <div class="graph-container">
             <div class="graph-one">
+              <div class="filter">
+                <select>
+                  <option>By : Year</option>
+                </select>
+              </div>
               <canvas
                 id="GraphApplication"
                 style="width: 100%; max-width: 600px"
@@ -316,6 +321,11 @@
               </div>
             </div>
             <div class="graph-two">
+              <div class="filter">
+                <select>
+                  <option>By : Year</option>
+                </select>
+              </div>
               <canvas
                 id="GraphScholar"
                 style="width: 100%; max-width: 600px"
@@ -340,8 +350,8 @@
     </div>
     <!-- modal -->
   </body>
-  <script src="admin.js"></script>
   <script>
+    AOS.init();
     const xValues = [
       "Universal Access to Quality Tertiary Education(UAQTEA)",
       "Training for Work Scholarship Program(TWSP)",
