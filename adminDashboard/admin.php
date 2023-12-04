@@ -300,6 +300,16 @@
               <p>Declined</p>
             </div>
           </div>
+          <div class="count-container" data-aos="fade-up"
+          data-aos-duration="600">
+            <div>
+              <img src="../assets/image/deletedAccount.png">
+            </div>
+            <div>
+              <strong id="deleted">9,999+</strong>
+              <p>Deleted</p>
+            </div>
+          </div>
         </div>
         <!-- data ang graph -->
         <div class="data-graph-container"data-aos="fade-up"
