@@ -264,18 +264,18 @@
             </div>
             <div>
               <strong id="approved">9,999+</strong>
-              <p>Scholars</p>
+              <a href="activitylog.php">Scholar</a>
             </div>
           </div>
 
           <div class="count-container" data-aos="fade-up"
-          data-aos-duration="400">
+          data-aos-duration="400" >
             <div>
               <img src="../assets/image/applicant.png">
             </div>
             <div>
               <strong id="pending">9,999+</strong>
-              <p>Applicant</p>
+              <a href="scholar.php">Applicant</a>
             </div>
           </div>
 
@@ -286,7 +286,7 @@
             </div>
             <div>
               <strong id="inactive">9,999+</strong>
-              <p>Inactive</p>
+              <a href="activitylog.php">Inactive</a>
             </div>
           </div>
 
@@ -297,7 +297,7 @@
             </div>
             <div>
               <strong id="declined">9,999+</strong>
-              <p>Declined</p>
+              <a href="decline.php">Declined</a>
             </div>
           </div>
           <div class="count-container" data-aos="fade-up"
@@ -307,7 +307,7 @@
             </div>
             <div>
               <strong id="deleted">9,999+</strong>
-              <p>Deleted</p>
+              <a href="delete-account.html">Deleted</a>
             </div>
           </div>
         </div>

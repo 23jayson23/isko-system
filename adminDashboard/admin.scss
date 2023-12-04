@@ -176,6 +176,7 @@ ul li a {
   gap: 18px;
 }
 .count-container {
+  cursor: pointer;
   border-radius: 10px;
   display: flex;
   gap: 30px;
@@ -213,7 +214,9 @@ ul li a {
   font-weight: 800;
   color: #164863;
 }
-.count-container p {
+.count-container a {
+  color: #164863;
+  text-decoration: none;
   font-family: "SLIM JOE";
   font-weight: 800;
   letter-spacing: 2px;
