@@ -356,7 +356,7 @@
       type: "GET",
       dataType: "json",
       success: function (data) {
-        console.log(data);
+
         var program1 = data.program1;
         var program2 = data.program2;
         var program3 = data.program3;
@@ -365,7 +365,7 @@
         var program6 = data.program6;
         var program7 = data.program7;
 
-        const yValues = [program1, program2, program3, program4, program5, program6, program7];
+        let yValues = [program1, program2, program3, program4, program5, program6, program7];
       // const yValues = [1, 1, 1, 0, 0, 1, 1];
         const barColors = [
           "#DDF2FD",
@@ -375,7 +375,11 @@
           "#427D9D",
           "#9BBEC8",
         ];
-
+        let Pecentage = [];
+        for(let x=0; x<yValues.length; x++){
+          let dataPercentage = (yValues[x] * 0.100) + '%'
+          Pecentage.push(dataPercentage)
+        }
         new Chart("myChart", {
           type: "pie",
           data: {
@@ -392,6 +396,19 @@
               display: true,
               text: "Course Percentage",
             },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var dataset = data.datasets[tooltipItem.datasetIndex];
+                  var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                    return previousValue + currentValue;
+                  });
+                  var currentValue = dataset.data[tooltipItem.index];
+                  var percentage = Math.floor(((currentValue / total) * 100) + 0.5);
+                  return percentage + "%";
+                }
+              }
+            }
           },
         });
       },
@@ -404,7 +421,6 @@
       type: "GET",
       dataType: "json",
       success: function (data) {
-        console.log(data);
 
         var pending_counts = data.pending_counts;
 
@@ -478,6 +494,19 @@
               display: true,
               text: "Pending Applications per Month",
             },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var dataset = data.datasets[tooltipItem.datasetIndex];
+                  var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                    return previousValue + currentValue;
+                  });
+                  var currentValue = dataset.data[tooltipItem.index];
+                  var percentage = Math.floor(((currentValue / total) * 100) + 0.5);
+                  return percentage + "%";
+                }
+              }
+            }
           },
         });
           },
@@ -490,7 +519,6 @@
       type: "GET",
       dataType: "json",
       success: function (data) {
-        console.log(data);
 
         var other_counts = data.other_counts;
 
@@ -564,6 +592,19 @@
               display: true,
               text: "Total of Scholars per Month",
             },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var dataset = data.datasets[tooltipItem.datasetIndex];
+                  var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                    return previousValue + currentValue;
+                  });
+                  var currentValue = dataset.data[tooltipItem.index];
+                  var percentage = Math.floor(((currentValue / total) * 100) + 0.5);
+                  return percentage + "%";
+                }
+              }
+            }
           },
         });
           },
@@ -581,7 +622,6 @@
         type: 'GET',
         dataType: 'json',
         success: function(data) {
-            console.log(data);
             var approved = data.approved;
             var pending = data.pending;
             var inactive = data.inactive;
