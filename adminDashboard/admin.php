@@ -319,6 +319,7 @@
               <div class="filter">
                 <select>
                   <option>By : Year</option>
+                  <option>By : Month</option>
                 </select>
               </div>
               <canvas
@@ -334,6 +335,7 @@
               <div class="filter">
                 <select>
                   <option>By : Year</option>
+                  <option>By : Month</option>
                 </select>
               </div>
               <canvas
