@@ -316,12 +316,17 @@
             data-aos-duration="3000">
           <div class="graph-container">
             <div class="graph-one">
-              <!-- <div class="filter">
-                <select>
-                  <option>By : Year</option>
-                  <option>By : Month</option>
+              <div class="filter" onchange="filterYearPending()">
+                <select id="filter_year_pending">
+                <option disabled selected value="">Please select value</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
                 </select>
-              </div> -->
+              </div>
               <canvas
                 id="GraphApplication"
                 style="width: 100%; max-width: 600px"
@@ -332,12 +337,17 @@
               </div>
             </div>
             <div class="graph-two">
-              <!-- <div class="filter">
-                <select>
-                  <option>By : Year</option>
-                  <option>By : Month</option>
+              <div class="filter">
+                <select id="filter_year" onchange="filterYearScholar()">
+                <option disabled selected value="">Please select value</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
                 </select>
-              </div> -->
+              </div>
               <canvas
                 id="GraphScholar"
                 style="width: 100%; max-width: 600px"
@@ -440,12 +450,85 @@
       },
     });
     //BAR - PENDING APPLICATIONS
+    function filterYearPending(){
+          $.ajax({
+          url: "../actions/get_scholar_by_date.php",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            console.log(data)
+            const filter = document.getElementById("filter_year_pending");
+            const YearData = filter.value
+            var dataYear = parseInt(YearData)
+            var selectYear = data.Pending
+            console.log(selectYear)
+
+            const arrayYear = [selectYear]
+
+            const rawData = []
+            if(dataYear){
+              let data = {
+                TimeStamp : dataYear.toString(),
+                value : selectYear[dataYear],
+              }
+              rawData.push(data)
+            }
+            console.log(rawData)
+            //getAll Data base on year
+         
+            let filteredData = filterDataByYear(rawData, dataYear)
+
+            function filterDataByYear(data, year) {
+              return data.filter(entry => new Date(entry.TimeStamp).getFullYear() === year);
+            }
+            
+            const barGraphColors = [
+              "#fbaf03",
+            ];
+
+            new Chart("GraphApplication", {
+              type: "bar",
+              data: {
+                labels: filteredData.map(entry => entry.TimeStamp),
+                datasets: [
+                  {
+                    backgroundColor: barGraphColors,
+                    data: filteredData.map(entry => entry.value),
+                  },
+                ],
+              },
+              options: {
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: "Total of Scholars per Month",
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var dataset = data.datasets[tooltipItem.datasetIndex];
+                      var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                        return previousValue + currentValue;
+                      });
+                      var currentValue = dataset.data[tooltipItem.index];
+                      var percentage = Math.floor(((currentValue / total) * 100) + 0.5);
+                      return percentage + "%";
+                    }
+                  }
+                }
+              },
+            });
+              },
+            error: function (error) {
+              console.log("Error:", error);
+            },
+          });
+      }
     $.ajax({
       url: "../actions/get_scholar_by_date.php",
       type: "GET",
       dataType: "json",
       success: function (data) {
-
         var pending_counts = data.pending_counts;
 
         const allMonths = [
@@ -465,7 +548,8 @@
 
         const ybarValues = [];
         const xbarValues = [];
-
+        const rawData = [];
+        let pending = data.pending
         allMonths.forEach((month) => {
           xbarValues.push(month);
           ybarValues.push(pending_counts[month] ? pending_counts[month] : 0);
@@ -485,7 +569,6 @@
           "#8EACCD",
           "#419197",
         ];
-
         new Chart("GraphApplication", {
           type: "bar",
           data: {
@@ -515,7 +598,7 @@
                   return percentage + "%";
                 }
               }
-            }
+            },
           },
         });
           },
@@ -524,12 +607,87 @@
         },
       });
     //BAR - SCHOLAR
+
+      function filterYearScholar(){
+          $.ajax({
+          url: "../actions/get_scholar_by_date.php",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            console.log(data)
+            const filter = document.getElementById("filter_year");
+            const YearData = filter.value
+            var dataYear = parseInt(YearData)
+            var selectYear = data.Scholar
+
+            const arrayYear = [selectYear]
+
+            const rawData = []
+            if(dataYear){
+              let data = {
+                TimeStamp : dataYear.toString(),
+                value : selectYear[dataYear],
+              }
+              rawData.push(data)
+             
+            }
+            console.log(rawData)
+            //getAll Data base on year
+         
+            let filteredData = filterDataByYear(rawData, dataYear)
+
+            function filterDataByYear(data, year) {
+              return data.filter(entry => new Date(entry.TimeStamp).getFullYear() === year);
+            }
+            
+            const barGraphColors = [
+              "#FF8060",
+            ];
+
+            new Chart("GraphScholar", {
+              type: "bar",
+              data: {
+                labels: filteredData.map(entry => entry.TimeStamp),
+                datasets: [
+                  {
+                    backgroundColor: barGraphColors,
+                    data: filteredData.map(entry => entry.value),
+                  },
+                ],
+              },
+              options: {
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: "Total of Scholars per Month",
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var dataset = data.datasets[tooltipItem.datasetIndex];
+                      var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                        return previousValue + currentValue;
+                      });
+                      var currentValue = dataset.data[tooltipItem.index];
+                      var percentage = Math.floor(((currentValue / total) * 100) + 0.5);
+                      return percentage + "%";
+                    }
+                  }
+                }
+              },
+            });
+              },
+            error: function (error) {
+              console.log("Error:", error);
+            },
+          });
+      }
+      
       $.ajax({
       url: "../actions/get_scholar_by_date.php",
       type: "GET",
       dataType: "json",
       success: function (data) {
-
         var other_counts = data.other_counts;
 
         const allMonths = [
@@ -554,7 +712,6 @@
           xbarValues.push(month);
           scholarYvalue.push(other_counts[month] ? other_counts[month] : 0);
         });
-
         const barGraphColors = [
           "#FF8080",
           "#B5CB99",
