@@ -23,69 +23,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
-    <div class="modal-main" id="personalinfo">
-      <div class="modal-container">
-          <div class="main-modal" >
-            <div class="modal-title">
-              <button onclick="closeModal()">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
-                </svg>
-              </button>
-            </div>
-            <div class="modal-image-container">
-              <img src="../assets/image/program course.jpg">
-            </div>
-            <div class="modal-NS">
-              <strong>Arnold Bartolome Jr</strong>
-              <p>Student</p>
-            </div>
-            <hr>
-            <br>
-            <div class="modal-information">
-                <div>
-                  <p>Personal Information</p>
-                </div>
-                <hr>
-                <div class="modal-info">
-                  <span>Name </span>
-                  <span>Juan Carlos Benigno</span>
-                </div>
-                <div class="modal-info">
-                  <span>Address </span>
-                  <span>012,Pinag Biyakan Malolos Bulacan</span>
-                </div>
-                <div class="modal-info">
-                  <span>Email </span>
-                  <span>Juankamo@gmail.com</span>
-                </div>
-                <div class="modal-info">
-                  <span>Phone Number </span>
-                  <span>0999-999-9999</span>
-                </div>
-                <div class="modal-info">
-                  <span>Gender </span>
-                  <span>Male</span>
-                </div>
-                <div class="modal-info">
-                  <span>Program </span>
-                  <span>NC II NURSING</span>
-                </div>
-                <div class="modal-info">
-                  <span>Semester </span>
-                  <span>1st Sem</span>
-                </div>
-                <div class="button-modal">
-                  <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                      <path fill-rule="evenodd" d="M7.875 1.5C6.839 1.5 6 2.34 6 3.375v2.99c-.426.053-.851.11-1.274.174-1.454.218-2.476 1.483-2.476 2.917v6.294a3 3 0 003 3h.27l-.155 1.705A1.875 1.875 0 007.232 22.5h9.536a1.875 1.875 0 001.867-2.045l-.155-1.705h.27a3 3 0 003-3V9.456c0-1.434-1.022-2.7-2.476-2.917A48.716 48.716 0 0018 6.366V3.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM16.5 6.205v-2.83A.375.375 0 0016.125 3h-8.25a.375.375 0 00-.375.375v2.83a49.353 49.353 0 019 0zm-.217 8.265c.178.018.317.16.333.337l.526 5.784a.375.375 0 01-.374.409H7.232a.375.375 0 01-.374-.409l.526-5.784a.373.373 0 01.333-.337 41.741 41.741 0 018.566 0zm.967-3.97a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75H18a.75.75 0 01-.75-.75V10.5zM15 9.75a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V10.5a.75.75 0 00-.75-.75H15z" clip-rule="evenodd" />
-                    </svg>           
-                  </button>
-                </div>
-            </div>
-          </div>
-      </div>
-    </div>
     <div class="main-container">
       <div class="side-panel">
         <ul>

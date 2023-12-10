@@ -23,6 +23,50 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body>
+  <div class="modal-main" id="personalinfo">
+    <div class="modal-container">
+      <div class="main-modal" >
+        <div class="modal-terms">
+          <strong style="font-size:20px; color:#164863; text-transform:uppercase; font-weight:800;">Terms and Conditions of TESDA PH:</strong>
+          <br>
+          <strong>Acceptance of Terms:</strong>
+          <p>By accessing or using any service provided by TESDA PH, you agree to comply with and be bound by these terms and conditions.</p>
+          <br>
+          <strong>User Eligibility:</strong>
+          <p>Users must meet eligibility criteria to access specific services. TESDA PH reserves the right to deny access to any user at its discretion.</p>
+          <br>
+          <strong>Use of Content:</strong>
+          <p>All content provided on the TESDA PH website, including but not limited to text, graphics, logos, images, and software, is the property of TESDA PH and is protected by intellectual property laws.</p>
+          <br>
+          <strong>User Reponsibilities:</strong>
+          <p>Users are responsible for maintaining the confidentiality of their accounts and ensuring the accuracy of the information provided. Unauthorized use of TESDA PH services is strictly prohibited.</p>
+          <br>
+          <strong>Service Modifications:</strong>
+          <p>TESDA PH reserves the right to modify or discontinue any service or part of the website without prior notice. TESDA PH shall not be liable for any modification, suspension, or discontinuation of services.</p>
+          <br>
+          <strong>Privacy Policy:</strong>
+          <p>TESDA PH is committed to protecting user privacy. The Privacy Policy outlines the collection, use, and disclosure of personal information. By using TESDA PH services, you agree to the terms of the Privacy Policy.</p>
+          <br>
+          <strong>Third-Party Links:</strong>
+          <p>TESDA PH may include links to third-party websites. These links are provided for convenience only. TESDA PH does not endorse or control the content of third-party websites and is not responsible for their content or activities.</p>
+          <br>
+          <strong>Limitation of Liability:</strong>
+          <p>TESDA PH shall not be liable for any direct, indirect, incidental, special, or consequential damages arising from the use of its services or inability to access them.</p>
+          <br>
+          <strong>Governing Law:</strong>
+          <p>These terms and conditions are governed by the laws of the Philippines. Any disputes arising from or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in the Philippines.</p>
+          <br>
+          <strong>Changes to Terms:</strong>
+          <p>TESDA PH reserves the right to update or modify these terms and conditions at any time. Users are responsible for reviewing the terms periodically.</p>
+          <br>
+          <input type="checkbox">
+          <span>By using TESDA PH services, you acknowledge that you have read, understood, and agree to abide by these terms and conditions. If you have any questions or concerns, please contact TESDA PH for clarification.</span>
+          <br><br>
+          <button onclick="closeModal()">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <div class="main-container">
       <div class="side-panel">
         <div class="upper-container">
@@ -239,36 +283,7 @@
                 <p>
                   Please fill up the following field to process your application
                 </p>
-              </div>
-              <div class="terms-condition-container">
-                <strong>Terms and Conditions: User Identity</strong>
-                <p>
-                  ID CARD TERMS AND CONDITIONS. This card is non-transferable
-                  and is property of Northern Michigan University. It is
-                  intended to last the duration of your stay. It is the
-                  cardholder’s responsibility to protect and maintain the
-                  condition of his/her card. The card’s purposes are
-                  identification and transaction of Northern Michigan University
-                  business. It should be carried when on university property and
-                  must be presented upon request. • The cardholder is
-                  responsible for immediately reporting a lost or stolen card.
-                  Reports must be made in person at the Wildcat Express Center
-                  or by calling (000)000-0000. A nonrefundable fee is charged to
-                  replace damaged, lost, or stolen cards. The University is not
-                  responsible for use of a lost or stolen card prior to its
-                  report to the Wildcat Express Center personnel. At that time
-                  the card will deactivated. • Privacy Statement: Personal
-                  information collected for the ID Card, including your image,
-                  will only be used for University purposes and within
-                  established University policies. Data collected on the use of
-                  the University facilities and services by an individual
-                  cardholder will be treated in the same manner. Information
-                  regarding the cardholder will not be provided to third parties
-                  unless required by applicable laws, or with written permission
-                  of the cardholder. Applicable federal law is the Family
-                  Education Rights and Privacy Act, also known as FERPA or the
-                  Xxxxxxx Amendment.
-                </p>
+                <button onclick="showModal()">Terms and Condition</button>
               </div>
               <form action="" id="add-frm">
                 <div class="gwa-cor-contiainer">
